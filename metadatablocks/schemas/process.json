@@ -1,0 +1,358 @@
+{
+  "$id": "process.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "process",
+  "type": "object",
+  "properties": {
+    "processing_steps": {
+      "typeName": "processStep",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Specification of the processing steps in the data life cycle.",
+      "items": {
+        "$ref": "#/definitions/processing_steps"
+      }
+    },
+    "processing_methods": {
+      "typeName": "processMethods",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about used methods in the data life cycle.",
+      "items": {
+        "$ref": "#/definitions/processing_methods"
+      }
+    },
+    "method_parameters": {
+      "typeName": "processMethodsPar",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Parameters relevant for processing methods.",
+      "items": {
+        "$ref": "#/definitions/method_parameters"
+      }
+    },
+    "software": {
+      "typeName": "processSoftware",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about used software.",
+      "items": {
+        "$ref": "#/definitions/software"
+      }
+    },
+    "environments": {
+      "typeName": "processEnv",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "(Computation) environments of the data generation. ",
+      "items": {
+        "$ref": "#/definitions/environments"
+      }
+    },
+    "instruments": {
+      "typeName": "processInstru",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "A representation of a piece of laboratory or field equipment, used in the execution of an experiment, that produces data.",
+      "items": {
+        "$ref": "#/definitions/instruments"
+      }
+    },
+    "_metadatablock_name": {
+      "default": "process",
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "processing_steps": {
+      "properties": {
+        "id": {
+          "typeName": "processStepId",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "Used to order the processing steps."
+        },
+        "type": {
+          "typeName": "processStepType",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the position in the data life cycle."
+        },
+        "date": {
+          "typeName": "processStepDate",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Date this step has been performed."
+        },
+        "methods": {
+          "typeName": "processStepMethods",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of methods used in this processing step (detailed information about methods should be given under Processing Methods)."
+        },
+        "error_method": {
+          "typeName": "processStepErrorMethod",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Method used to measure the errors or uncertainties of this processing step."
+        },
+        "software": {
+          "typeName": "processStepSoftware",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of software names used in this processing step (detailed information about software should be given under Software)."
+        },
+        "instruments": {
+          "typeName": "processStepHardware",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of instrumental hardware used in this processing step (detailed information about instruments should be given under Instruments)."
+        },
+        "environment": {
+          "typeName": "processStepEnvironment",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the environment used for this processing step (detailed information about the environment should be given under Environments)."
+        },
+        "input": {
+          "typeName": "processStepInput",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "string",
+          "description": "Name of the file or object that was the input of this processing step"
+        },
+        "output": {
+          "typeName": "processStepOutput",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "string",
+          "description": "Name of the file or object that was the output of this processing step"
+        }
+      }
+    },
+    "processing_methods": {
+      "properties": {
+        "name": {
+          "typeName": "processMethodsName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the method as free text."
+        },
+        "description": {
+          "typeName": "processMethodsDescription",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Description of the method as free text"
+        },
+        "parameters": {
+          "typeName": "processMethodsPars",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of all parameter names relevant for this method (detailed information about parameters should be given under Method Parameters)."
+        }
+      }
+    },
+    "method_parameters": {
+      "properties": {
+        "name": {
+          "typeName": "processMethodsParName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the parameter."
+        },
+        "symbol": {
+          "typeName": "processMethodsParSymbol",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The symbol used to describe this parameter."
+        },
+        "unit": {
+          "typeName": "processMethodsParUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit or scale of this parameter."
+        },
+        "value": {
+          "typeName": "processMethodsParValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The (numerical) value of this parameter."
+        },
+        "textual_value": {
+          "typeName": "processMethodsParTextValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The value of this method parameter. (for non numerical values)"
+        }
+      }
+    },
+    "software": {
+      "properties": {
+        "name": {
+          "typeName": "processSoftwareName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the software."
+        },
+        "version": {
+          "typeName": "processSoftwareVersion",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Version of the software."
+        },
+        "id_type": {
+          "typeName": "processSoftwareIDType",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "The type of digital identifier used for this software (e.g., Digital Object Identifier (DOI))."
+        },
+        "id_number": {
+          "typeName": "processSoftwareIDNumber",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The identifier for the selected ID type."
+        },
+        "citation": {
+          "typeName": "processSoftwareCitation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Assosicated text publication to the software."
+        },
+        "url": {
+          "typeName": "processSoftwareURL",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Link to the software, code repository or application."
+        },
+        "license": {
+          "typeName": "processSoftwareLicence",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The license type of the software."
+        }
+      }
+    },
+    "environments": {
+      "properties": {
+        "name": {
+          "typeName": "processEnvName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the environment."
+        },
+        "compiler_names_and_flags": {
+          "typeName": "processEnvCompName",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "string",
+          "description": "Name and flags of the used compilers."
+        },
+        "number_of_nodes": {
+          "typeName": "processEnvNodes",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "Number of compute nodes inside a high performance cluster environment."
+        },
+        "ppn": {
+          "typeName": "processEnvPPN",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "Processors per node"
+        }
+      }
+    },
+    "instruments": {
+      "properties": {
+        "name": {
+          "typeName": "processInstruName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of this instrument."
+        },
+        "description": {
+          "typeName": "processInstruDescr",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Description of the instrument, e.g., what it is used for."
+        },
+        "version": {
+          "typeName": "processInstruType",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The type or version of this instrument."
+        },
+        "part_number": {
+          "typeName": "processInstruPartnum",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "string",
+          "description": "A vendors part number for an instrument or a piece of equipment."
+        },
+        "serial_number": {
+          "typeName": "processInstruSerialnum",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "string",
+          "description": "A vendors serial number for an instrument or a piece of equipment."
+        },
+        "software": {
+          "typeName": "processInstruSoftware",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Required software for this instrument."
+        },
+        "location": {
+          "typeName": "processInstruLocation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Location of the instrument."
+        }
+      }
+    }
+  },
+  "required": [
+    "processing_steps",
+    "processing_methods",
+    "method_parameters",
+    "software",
+    "environments",
+    "instruments"
+  ]
+}

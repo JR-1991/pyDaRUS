@@ -1,0 +1,115 @@
+{
+  "EngMeta": {
+    "data_generation": null,
+    "boundary_conditions": [
+      {
+        "flows": null,
+        "parameters": null
+      }
+    ],
+    "controlled_variables": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null,
+        "minimum_value": null,
+        "maximum_value": null,
+        "textual_value": null
+      }
+    ],
+    "boundary_parameters": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null
+      }
+    ],
+    "spatial_resolution": [
+      {
+        "number_of_cells": null,
+        "number_of_blocks": null,
+        "number_of_points_x": null,
+        "number_of_points_y": null,
+        "number_of_points_z": null,
+        "interval_x": null,
+        "interval_y": null,
+        "interval_z": null,
+        "unit": null,
+        "scaling_formular": null
+      }
+    ],
+    "system_parameters": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null,
+        "textual_value": null
+      }
+    ],
+    "system_or_phase_components": [
+      {
+        "id": null,
+        "name": null,
+        "description": null,
+        "inchicode": null,
+        "smilescode": null,
+        "iupac_name": null,
+        "quantity": null,
+        "unit": null,
+        "force_field": null
+      }
+    ],
+    "flows": [
+      {
+        "name": null,
+        "components": null,
+        "shape": null,
+        "size": null,
+        "position": null
+      }
+    ],
+    "force_field_parameters": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null
+      }
+    ],
+    "measured_variables": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "error": null,
+        "error_description": null,
+        "minimum_value": null,
+        "maximum_value": null,
+        "textual_value": null
+      }
+    ],
+    "temporal_resolution": [
+      {
+        "points": null,
+        "number_of_time_steps": null,
+        "interval": null,
+        "unit": null
+      }
+    ],
+    "force_field": [
+      {
+        "name": null,
+        "parameters": null
+      }
+    ],
+    "system_phases": [
+      {
+        "name": null,
+        "components": null
+      }
+    ]
+  }
+}
