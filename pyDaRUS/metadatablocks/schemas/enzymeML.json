@@ -4,6 +4,36 @@
   "title": "enzymeML",
   "type": "object",
   "properties": {
+    "proteins": {
+      "typeName": "enzymeMLProtein",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describes the proteins that haven been used in the course of the experiment. These should include catalytic active enzymes as well as non-catalytic entities such as inhibitors.",
+      "items": {
+        "$ref": "#/definitions/proteins"
+      }
+    },
+    "kinetic_law": {
+      "typeName": "enzymeMLKineticLaw",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describes the kinetic law that has been used to model the reaction kinetics. It includes the conventional as well as the mathematic equation.",
+      "items": {
+        "$ref": "#/definitions/kinetic_law"
+      }
+    },
+    "kinetic_parameters": {
+      "typeName": "enzymeMLKineticParameter",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describe the kinetic parameters that have been estimated using the given kinetic law.",
+      "items": {
+        "$ref": "#/definitions/kinetic_parameters"
+      }
+    },
     "vessels": {
       "typeName": "enzymeMLVessel",
       "type": "array",
@@ -24,36 +54,6 @@
         "$ref": "#/definitions/reactions"
       }
     },
-    "proteins": {
-      "typeName": "enzymeMLProtein",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describes the proteins that haven been used in the course of the experiment. These should include catalytic active enzymes as well as non-catalytic entities such as inhibitors.",
-      "items": {
-        "$ref": "#/definitions/proteins"
-      }
-    },
-    "kinetic_parameters": {
-      "typeName": "enzymeMLKineticParameter",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describe the kinetic parameters that have been estimated using the given kinetic law.",
-      "items": {
-        "$ref": "#/definitions/kinetic_parameters"
-      }
-    },
-    "kinetic_law": {
-      "typeName": "enzymeMLKineticLaw",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describes the kinetic law that has been used to model the reaction kinetics. It includes the conventional as well as the mathematic equation.",
-      "items": {
-        "$ref": "#/definitions/kinetic_law"
-      }
-    },
     "reactants": {
       "typeName": "enzymeMLReactant",
       "type": "array",
@@ -70,6 +70,144 @@
     }
   },
   "definitions": {
+    "proteins": {
+      "properties": {
+        "identifier": {
+          "typeName": "enzymeMLProteinID",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the internal identifier of the protein. Please follow the convention of denote a protein entity by a 'p' followed by an integer. For instance, 'p1' is a valid ID."
+        },
+        "name": {
+          "typeName": "enzymeMLProteinName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the convential name of the protein. Please note that this field on purpose can not be unique since protein/enzyme names vary in between fields. Use the amino acid sequence, UniProtID and/or EC number for a unique identification."
+        },
+        "vessel_reference": {
+          "typeName": "enzymeMLProteinVessel",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the name of the vessel in which the protein was given. If the protein was part of multiple reactions carried out in different vessel, please separated these via semicolon ';'."
+        },
+        "initial_concentration": {
+          "typeName": "enzymeMLProteinInitialConcentration",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Specifies the initial concentration value at the beginning of the experiment."
+        },
+        "unit": {
+          "typeName": "enzymeMLProteinSubstanceUnits",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the corresponding SI unit to the initial concentration value."
+        },
+        "constant": {
+          "typeName": "enzymeMLProteinConstant",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies if the proteins concentations was constant or not. If a protein serves as a substrate such as in protease reactions, concentrations are likely to change and this field should be set to 'Not constant'."
+        },
+        "sequence": {
+          "typeName": "enzymeMLProteinSequence",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the aminoacid sequence of the protein. For instance 'MGHAGAHHAG\u00c9'."
+        },
+        "organism": {
+          "typeName": "enzymeMLProteinOrganism",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the host organism that was used to express the protein."
+        },
+        "uniprotid": {
+          "typeName": "enzymeMLProteinUniProtID",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the UniProt Identifier of the protein that is used to query the UniProt database."
+        },
+        "ec_number": {
+          "typeName": "enzymeMLProteinECNumber",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the EC-Number of the protein that denotes the hierarchical releation within the functional tree of protein-families. For instance EC: 1.1.1.1 belongs to the family of alcohol dehydrogenases."
+        },
+        "sbo_term": {
+          "typeName": "enzymeMLProteinSBOTerm",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the ID of the System Biology Ontology from branch 'material entity' to define a proteins role (e.g. SBO:0000240)"
+        }
+      }
+    },
+    "kinetic_law": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLKineticLawName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional name of the kinetic law that has been used. For instance 'Reversible Michaelis-Menten'."
+        },
+        "reaction_reference": {
+          "typeName": "enzymeMLKineticLawReaction",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the reaction that has beeen modeled by the given kinetic law."
+        },
+        "kinetic_model": {
+          "typeName": "enzymeMLKineticLawEquation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the mathematical equation of the given kinetic law. For variables that reference entities that are part of this EnzymeML document, please use the given identifier. Parameters will be defined in another field and are referenced by their conventional names. For instance, the following equation denotes a valid kinetic model  'vmax  * s1 / ( km + s1 )'."
+        }
+      }
+    },
+    "kinetic_parameters": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLKineticParameterName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional name of the kinetic paramter that has been estimated. For instance, 'vmax' is a valid name for a parameter. Please note, that for unique identification the SBO Term should be included."
+        },
+        "value": {
+          "typeName": "enzymeMLKineticParameterValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Specifies the numerical value of the estimated kinetic parameter."
+        },
+        "unit": {
+          "typeName": "enzymeMLKineticParameterUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the SI unit of the estimated kinetic parameter."
+        },
+        "sbo_term": {
+          "typeName": "enzymeMLKineticParameterSBOTerm",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the ID of the System Biology Ontology from branch 'systems description parameter' to define a kinetic parameter (e.g. SBO:0000545)"
+        }
+      }
+    },
     "vessels": {
       "properties": {
         "name": {
@@ -162,144 +300,6 @@
         }
       }
     },
-    "proteins": {
-      "properties": {
-        "identifier": {
-          "typeName": "enzymeMLProteinID",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the internal identifier of the protein. Please follow the convention of denote a protein entity by a 'p' followed by an integer. For instance, 'p1' is a valid ID."
-        },
-        "name": {
-          "typeName": "enzymeMLProteinName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the convential name of the protein. Please note that this field on purpose can not be unique since protein/enzyme names vary in between fields. Use the amino acid sequence, UniProtID and/or EC number for a unique identification."
-        },
-        "vessel_reference": {
-          "typeName": "enzymeMLProteinVessel",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the name of the vessel in which the protein was given. If the protein was part of multiple reactions carried out in different vessel, please separated these via semicolon ';'."
-        },
-        "initial_concentration": {
-          "typeName": "enzymeMLProteinInitialConcentration",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Specifies the initial concentration value at the beginning of the experiment."
-        },
-        "unit": {
-          "typeName": "enzymeMLProteinSubstanceUnits",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the corresponding SI unit to the initial concentration value."
-        },
-        "constant": {
-          "typeName": "enzymeMLProteinConstant",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies if the proteins concentations was constant or not. If a protein serves as a substrate such as in protease reactions, concentrations are likely to change and this field should be set to 'Not constant'."
-        },
-        "sequence": {
-          "typeName": "enzymeMLProteinSequence",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the aminoacid sequence of the protein. For instance 'MGHAGAHHAG\u00c9'."
-        },
-        "organism": {
-          "typeName": "enzymeMLProteinOrganism",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the host organism that was used to express the protein."
-        },
-        "uniprotid": {
-          "typeName": "enzymeMLProteinUniProtID",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the UniProt Identifier of the protein that is used to query the UniProt database."
-        },
-        "ec_number": {
-          "typeName": "enzymeMLProteinECNumber",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the EC-Number of the protein that denotes the hierarchical releation within the functional tree of protein-families. For instance EC: 1.1.1.1 belongs to the family of alcohol dehydrogenases."
-        },
-        "sbo_term": {
-          "typeName": "enzymeMLProteinSBOTerm",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the ID of the System Biology Ontology from branch 'material entity' to define a proteins role (e.g. SBO:0000240)"
-        }
-      }
-    },
-    "kinetic_parameters": {
-      "properties": {
-        "name": {
-          "typeName": "enzymeMLKineticParameterName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional name of the kinetic paramter that has been estimated. For instance, 'vmax' is a valid name for a parameter. Please note, that for unique identification the SBO Term should be included."
-        },
-        "value": {
-          "typeName": "enzymeMLKineticParameterValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Specifies the numerical value of the estimated kinetic parameter."
-        },
-        "unit": {
-          "typeName": "enzymeMLKineticParameterUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the SI unit of the estimated kinetic parameter."
-        },
-        "sbo_term": {
-          "typeName": "enzymeMLKineticParameterSBOTerm",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the ID of the System Biology Ontology from branch 'systems description parameter' to define a kinetic parameter (e.g. SBO:0000545)"
-        }
-      }
-    },
-    "kinetic_law": {
-      "properties": {
-        "name": {
-          "typeName": "enzymeMLKineticLawName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional name of the kinetic law that has been used. For instance 'Reversible Michaelis-Menten'."
-        },
-        "reaction_reference": {
-          "typeName": "enzymeMLKineticLawReaction",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the reaction that has beeen modeled by the given kinetic law."
-        },
-        "kinetic_model": {
-          "typeName": "enzymeMLKineticLawEquation",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the mathematical equation of the given kinetic law. For variables that reference entities that are part of this EnzymeML document, please use the given identifier. Parameters will be defined in another field and are referenced by their conventional names. For instance, the following equation denotes a valid kinetic model  'vmax  * s1 / ( km + s1 )'."
-        }
-      }
-    },
     "reactants": {
       "properties": {
         "identifier": {
@@ -369,11 +369,11 @@
     }
   },
   "required": [
+    "proteins",
+    "kinetic_law",
+    "kinetic_parameters",
     "vessels",
     "reactions",
-    "proteins",
-    "kinetic_parameters",
-    "kinetic_law",
     "reactants"
   ]
 }

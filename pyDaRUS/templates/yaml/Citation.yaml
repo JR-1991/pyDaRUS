@@ -21,68 +21,68 @@ Citation:
   documentation_and_access_to_sources: null
   did_it_work_: null
   explanation: null
-  software:
-    - name: null
-      version: null
-  distributor:
-    - name: null
-      affiliation: null
-      abbreviation: null
-      url: null
-      logo_url: null
-  time_period_covered:
-    - start: null
-      end: null
   contributor:
     - type: null
       name: null
-  other_id:
-    - agency: null
-      identifier: null
+  software:
+    - name: null
+      version: null
+  time_period_covered:
+    - start: null
+      end: null
+  contact:
+    - name: null
+      affiliation: null
+      e_mail: null
   project:
     - name: null
       level: null
-  topic_classification:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  keyword:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  producer:
-    - name: null
-      affiliation: null
-      abbreviation: null
-      url: null
-      logo_url: null
-  grant_information:
-    - grant_agency: null
-      grant_number: null
   description:
     - text: null
       date: null
   series:
     - name: null
       information: null
-  related_publication:
-    - citation: null
-      id_type: null
-      id_number: null
-      url: null
-  date_of_collection:
-    - start: null
-      end: null
+  topic_classification:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
+  other_id:
+    - agency: null
+      identifier: null
   author:
     - name: null
       affiliation: null
       identifier_scheme: null
       identifier: null
+  distributor:
+    - name: null
+      affiliation: null
+      abbreviation: null
+      url: null
+      logo_url: null
+  keyword:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
+  grant_information:
+    - grant_agency: null
+      grant_number: null
+  related_publication:
+    - citation: null
+      id_type: null
+      id_number: null
+      url: null
   storage:
     - name: null
       location: null
       size: null
-  contact:
+  producer:
     - name: null
       affiliation: null
-      e_mail: null
+      abbreviation: null
+      url: null
+      logo_url: null
+  date_of_collection:
+    - start: null
+      end: null

@@ -1,9 +1,16 @@
 Process:
-  environments:
+  instruments:
     - name: null
-      compiler_names_and_flags: null
-      number_of_nodes: null
-      ppn: null
+      description: null
+      version: null
+      part_number: null
+      serial_number: null
+      software: null
+      location: null
+  processing_methods:
+    - name: null
+      description: null
+      parameters: null
   software:
     - name: null
       version: null
@@ -23,21 +30,14 @@ Process:
       environment: null
       input: null
       output: null
-  instruments:
+  environments:
     - name: null
-      description: null
-      version: null
-      part_number: null
-      serial_number: null
-      software: null
-      location: null
+      compiler_names_and_flags: null
+      number_of_nodes: null
+      ppn: null
   method_parameters:
     - name: null
       symbol: null
       unit: null
       value: null
       textual_value: null
-  processing_methods:
-    - name: null
-      description: null
-      parameters: null

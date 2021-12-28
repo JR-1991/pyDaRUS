@@ -1,11 +1,21 @@
 {
   "Process": {
-    "environments": [
+    "instruments": [
       {
         "name": null,
-        "compiler_names_and_flags": null,
-        "number_of_nodes": null,
-        "ppn": null
+        "description": null,
+        "version": null,
+        "part_number": null,
+        "serial_number": null,
+        "software": null,
+        "location": null
+      }
+    ],
+    "processing_methods": [
+      {
+        "name": null,
+        "description": null,
+        "parameters": null
       }
     ],
     "software": [
@@ -33,15 +43,12 @@
         "output": null
       }
     ],
-    "instruments": [
+    "environments": [
       {
         "name": null,
-        "description": null,
-        "version": null,
-        "part_number": null,
-        "serial_number": null,
-        "software": null,
-        "location": null
+        "compiler_names_and_flags": null,
+        "number_of_nodes": null,
+        "ppn": null
       }
     ],
     "method_parameters": [
@@ -51,13 +58,6 @@
         "unit": null,
         "value": null,
         "textual_value": null
-      }
-    ],
-    "processing_methods": [
-      {
-        "name": null,
-        "description": null,
-        "parameters": null
       }
     ]
   }

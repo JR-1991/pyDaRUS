@@ -1,4 +1,25 @@
 EnzymeMl:
+  proteins:
+    - identifier: null
+      name: null
+      vessel_reference: null
+      initial_concentration: null
+      unit: null
+      constant: null
+      sequence: null
+      organism: null
+      uniprotid: null
+      ec_number: null
+      sbo_term: null
+  kinetic_law:
+    - name: null
+      reaction_reference: null
+      kinetic_model: null
+  kinetic_parameters:
+    - name: null
+      value: null
+      unit: null
+      sbo_term: null
   vessels:
     - name: null
       size: null
@@ -13,27 +34,6 @@ EnzymeMl:
       products: null
       modifiers: null
       equation: null
-  proteins:
-    - identifier: null
-      name: null
-      vessel_reference: null
-      initial_concentration: null
-      unit: null
-      constant: null
-      sequence: null
-      organism: null
-      uniprotid: null
-      ec_number: null
-      sbo_term: null
-  kinetic_parameters:
-    - name: null
-      value: null
-      unit: null
-      sbo_term: null
-  kinetic_law:
-    - name: null
-      reaction_reference: null
-      kinetic_model: null
   reactants:
     - identifier: null
       name: null
