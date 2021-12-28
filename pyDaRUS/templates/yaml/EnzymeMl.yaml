@@ -1,4 +1,18 @@
 EnzymeMl:
+  vessels:
+    - name: null
+      size: null
+      unit: null
+      constant: null
+  reactions:
+    - name: null
+      temperature_value: null
+      temperature_unit: null
+      ph_value: null
+      educts: null
+      products: null
+      modifiers: null
+      equation: null
   proteins:
     - identifier: null
       name: null
@@ -16,20 +30,6 @@ EnzymeMl:
       value: null
       unit: null
       sbo_term: null
-  vessels:
-    - name: null
-      size: null
-      unit: null
-      constant: null
-  reactions:
-    - name: null
-      temperature_value: null
-      temperature_unit: null
-      ph_value: null
-      educts: null
-      products: null
-      modifiers: null
-      equation: null
   kinetic_law:
     - name: null
       reaction_reference: null

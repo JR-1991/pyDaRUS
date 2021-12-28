@@ -1,5 +1,25 @@
 {
   "EnzymeMl": {
+    "vessels": [
+      {
+        "name": null,
+        "size": null,
+        "unit": null,
+        "constant": null
+      }
+    ],
+    "reactions": [
+      {
+        "name": null,
+        "temperature_value": null,
+        "temperature_unit": null,
+        "ph_value": null,
+        "educts": null,
+        "products": null,
+        "modifiers": null,
+        "equation": null
+      }
+    ],
     "proteins": [
       {
         "identifier": null,
@@ -21,26 +41,6 @@
         "value": null,
         "unit": null,
         "sbo_term": null
-      }
-    ],
-    "vessels": [
-      {
-        "name": null,
-        "size": null,
-        "unit": null,
-        "constant": null
-      }
-    ],
-    "reactions": [
-      {
-        "name": null,
-        "temperature_value": null,
-        "temperature_unit": null,
-        "ph_value": null,
-        "educts": null,
-        "products": null,
-        "modifiers": null,
-        "equation": null
       }
     ],
     "kinetic_law": [

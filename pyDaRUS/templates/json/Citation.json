@@ -22,32 +22,10 @@
     "documentation_and_access_to_sources": null,
     "did_it_work_": null,
     "explanation": null,
-    "producer": [
+    "software": [
       {
         "name": null,
-        "affiliation": null,
-        "abbreviation": null,
-        "url": null,
-        "logo_url": null
-      }
-    ],
-    "contact": [
-      {
-        "name": null,
-        "affiliation": null,
-        "e_mail": null
-      }
-    ],
-    "contributor": [
-      {
-        "type": null,
-        "name": null
-      }
-    ],
-    "time_period_covered": [
-      {
-        "start": null,
-        "end": null
+        "version": null
       }
     ],
     "distributor": [
@@ -59,17 +37,16 @@
         "logo_url": null
       }
     ],
-    "storage": [
+    "time_period_covered": [
       {
-        "name": null,
-        "location": null,
-        "size": null
+        "start": null,
+        "end": null
       }
     ],
-    "series": [
+    "contributor": [
       {
-        "name": null,
-        "information": null
+        "type": null,
+        "name": null
       }
     ],
     "other_id": [
@@ -78,12 +55,17 @@
         "identifier": null
       }
     ],
-    "author": [
+    "project": [
       {
         "name": null,
-        "affiliation": null,
-        "identifier_scheme": null,
-        "identifier": null
+        "level": null
+      }
+    ],
+    "topic_classification": [
+      {
+        "term": null,
+        "vocabulary": null,
+        "vocabulary_url": null
       }
     ],
     "keyword": [
@@ -91,6 +73,33 @@
         "term": null,
         "vocabulary": null,
         "vocabulary_url": null
+      }
+    ],
+    "producer": [
+      {
+        "name": null,
+        "affiliation": null,
+        "abbreviation": null,
+        "url": null,
+        "logo_url": null
+      }
+    ],
+    "grant_information": [
+      {
+        "grant_agency": null,
+        "grant_number": null
+      }
+    ],
+    "description": [
+      {
+        "text": null,
+        "date": null
+      }
+    ],
+    "series": [
+      {
+        "name": null,
+        "information": null
       }
     ],
     "related_publication": [
@@ -101,41 +110,32 @@
         "url": null
       }
     ],
-    "project": [
-      {
-        "name": null,
-        "level": null
-      }
-    ],
     "date_of_collection": [
       {
         "start": null,
         "end": null
       }
     ],
-    "grant_information": [
-      {
-        "grant_agency": null,
-        "grant_number": null
-      }
-    ],
-    "software": [
+    "author": [
       {
         "name": null,
-        "version": null
+        "affiliation": null,
+        "identifier_scheme": null,
+        "identifier": null
       }
     ],
-    "description": [
+    "storage": [
       {
-        "text": null,
-        "date": null
+        "name": null,
+        "location": null,
+        "size": null
       }
     ],
-    "topic_classification": [
+    "contact": [
       {
-        "term": null,
-        "vocabulary": null,
-        "vocabulary_url": null
+        "name": null,
+        "affiliation": null,
+        "e_mail": null
       }
     ]
   }

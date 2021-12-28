@@ -21,68 +21,68 @@ Citation:
   documentation_and_access_to_sources: null
   did_it_work_: null
   explanation: null
-  producer:
+  software:
     - name: null
-      affiliation: null
-      abbreviation: null
-      url: null
-      logo_url: null
-  contact:
-    - name: null
-      affiliation: null
-      e_mail: null
-  contributor:
-    - type: null
-      name: null
-  time_period_covered:
-    - start: null
-      end: null
+      version: null
   distributor:
     - name: null
       affiliation: null
       abbreviation: null
       url: null
       logo_url: null
-  storage:
-    - name: null
-      location: null
-      size: null
-  series:
-    - name: null
-      information: null
+  time_period_covered:
+    - start: null
+      end: null
+  contributor:
+    - type: null
+      name: null
   other_id:
     - agency: null
       identifier: null
-  author:
+  project:
     - name: null
-      affiliation: null
-      identifier_scheme: null
-      identifier: null
+      level: null
+  topic_classification:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
   keyword:
     - term: null
       vocabulary: null
       vocabulary_url: null
+  producer:
+    - name: null
+      affiliation: null
+      abbreviation: null
+      url: null
+      logo_url: null
+  grant_information:
+    - grant_agency: null
+      grant_number: null
+  description:
+    - text: null
+      date: null
+  series:
+    - name: null
+      information: null
   related_publication:
     - citation: null
       id_type: null
       id_number: null
       url: null
-  project:
-    - name: null
-      level: null
   date_of_collection:
     - start: null
       end: null
-  grant_information:
-    - grant_agency: null
-      grant_number: null
-  software:
+  author:
     - name: null
-      version: null
-  description:
-    - text: null
-      date: null
-  topic_classification:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
+      affiliation: null
+      identifier_scheme: null
+      identifier: null
+  storage:
+    - name: null
+      location: null
+      size: null
+  contact:
+    - name: null
+      affiliation: null
+      e_mail: null
