@@ -19,70 +19,70 @@ Citation:
   origin_of_sources: null
   characteristic_of_sources_noted: null
   documentation_and_access_to_sources: null
-  did_it_work_: null
+  did_it_work: null
   explanation: null
-  contributor:
-    - type: null
-      name: null
-  software:
-    - name: null
-      version: null
-  time_period_covered:
-    - start: null
-      end: null
-  contact:
-    - name: null
-      affiliation: null
-      e_mail: null
-  project:
-    - name: null
-      level: null
-  description:
-    - text: null
-      date: null
-  series:
-    - name: null
-      information: null
-  topic_classification:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
   other_id:
     - agency: null
       identifier: null
-  author:
+  date_of_collection:
+    - start: null
+      end: null
+  software:
+    - name: null
+      version: null
+  contact:
     - name: null
       affiliation: null
-      identifier_scheme: null
-      identifier: null
-  distributor:
-    - name: null
-      affiliation: null
-      abbreviation: null
-      url: null
-      logo_url: null
-  keyword:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  grant_information:
-    - grant_agency: null
-      grant_number: null
-  related_publication:
-    - citation: null
-      id_type: null
-      id_number: null
-      url: null
-  storage:
-    - name: null
-      location: null
-      size: null
+      email: null
   producer:
     - name: null
       affiliation: null
       abbreviation: null
       url: null
       logo_url: null
-  date_of_collection:
+  series:
+    - name: null
+      information: null
+  storage:
+    - name: null
+      location: null
+      size: null
+  time_period_covered:
     - start: null
       end: null
+  description:
+    - text: null
+      date: null
+  topic_classification:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
+  contributor:
+    - type: null
+      name: null
+  project:
+    - name: null
+      level: null
+  grant_information:
+    - grant_agency: null
+      grant_number: null
+  keyword:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
+  distributor:
+    - name: null
+      affiliation: null
+      abbreviation: null
+      url: null
+      logo_url: null
+  author:
+    - name: null
+      affiliation: null
+      identifier_scheme: null
+      identifier: null
+  related_publication:
+    - citation: null
+      id_type: null
+      id_number: null
+      url: null

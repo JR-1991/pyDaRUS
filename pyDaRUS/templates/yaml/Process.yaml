@@ -1,16 +1,4 @@
 Process:
-  instruments:
-    - name: null
-      description: null
-      version: null
-      part_number: null
-      serial_number: null
-      software: null
-      location: null
-  processing_methods:
-    - name: null
-      description: null
-      parameters: null
   software:
     - name: null
       version: null
@@ -19,6 +7,20 @@ Process:
       citation: null
       url: null
       license: null
+  instruments:
+    - name: null
+      description: null
+      version: null
+      part_number: null
+      serial_number: null
+      software: null
+      location: null
+  method_parameters:
+    - name: null
+      symbol: null
+      unit: null
+      value: null
+      textual_value: null
   processing_steps:
     - id: null
       type: null
@@ -35,9 +37,7 @@ Process:
       compiler_names_and_flags: null
       number_of_nodes: null
       ppn: null
-  method_parameters:
+  processing_methods:
     - name: null
-      symbol: null
-      unit: null
-      value: null
-      textual_value: null
+      description: null
+      parameters: null

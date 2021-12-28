@@ -1,5 +1,16 @@
 {
   "Process": {
+    "software": [
+      {
+        "name": null,
+        "version": null,
+        "id_type": null,
+        "id_number": null,
+        "citation": null,
+        "url": null,
+        "license": null
+      }
+    ],
     "instruments": [
       {
         "name": null,
@@ -11,22 +22,13 @@
         "location": null
       }
     ],
-    "processing_methods": [
+    "method_parameters": [
       {
         "name": null,
-        "description": null,
-        "parameters": null
-      }
-    ],
-    "software": [
-      {
-        "name": null,
-        "version": null,
-        "id_type": null,
-        "id_number": null,
-        "citation": null,
-        "url": null,
-        "license": null
+        "symbol": null,
+        "unit": null,
+        "value": null,
+        "textual_value": null
       }
     ],
     "processing_steps": [
@@ -51,13 +53,11 @@
         "ppn": null
       }
     ],
-    "method_parameters": [
+    "processing_methods": [
       {
         "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null,
-        "textual_value": null
+        "description": null,
+        "parameters": null
       }
     ]
   }

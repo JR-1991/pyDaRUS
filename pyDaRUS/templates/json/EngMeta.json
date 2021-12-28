@@ -1,85 +1,6 @@
 {
   "EngMeta": {
     "data_generation": null,
-    "force_field_parameters": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null
-      }
-    ],
-    "measured_variables": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "error": null,
-        "error_description": null,
-        "minimum_value": null,
-        "maximum_value": null,
-        "textual_value": null
-      }
-    ],
-    "force_field": [
-      {
-        "name": null,
-        "parameters": null
-      }
-    ],
-    "controlled_variables": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null,
-        "minimum_value": null,
-        "maximum_value": null,
-        "textual_value": null
-      }
-    ],
-    "temporal_resolution": [
-      {
-        "points": null,
-        "number_of_time_steps": null,
-        "interval": null,
-        "unit": null
-      }
-    ],
-    "boundary_conditions": [
-      {
-        "flows": null,
-        "parameters": null
-      }
-    ],
-    "boundary_parameters": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null
-      }
-    ],
-    "spatial_resolution": [
-      {
-        "number_of_cells": null,
-        "number_of_blocks": null,
-        "number_of_points_x": null,
-        "number_of_points_y": null,
-        "number_of_points_z": null,
-        "interval_x": null,
-        "interval_y": null,
-        "interval_z": null,
-        "unit": null,
-        "scaling_formular": null
-      }
-    ],
-    "system_phases": [
-      {
-        "name": null,
-        "components": null
-      }
-    ],
     "system_parameters": [
       {
         "name": null,
@@ -102,6 +23,17 @@
         "force_field": null
       }
     ],
+    "controlled_variables": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null,
+        "minimum_value": null,
+        "maximum_value": null,
+        "textual_value": null
+      }
+    ],
     "flows": [
       {
         "name": null,
@@ -109,6 +41,74 @@
         "shape": null,
         "size": null,
         "position": null
+      }
+    ],
+    "boundary_conditions": [
+      {
+        "flows": null,
+        "parameters": null
+      }
+    ],
+    "measured_variables": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "error": null,
+        "error_description": null,
+        "minimum_value": null,
+        "maximum_value": null,
+        "textual_value": null
+      }
+    ],
+    "system_phases": [
+      {
+        "name": null,
+        "components": null
+      }
+    ],
+    "temporal_resolution": [
+      {
+        "points": null,
+        "number_of_time_steps": null,
+        "interval": null,
+        "unit": null
+      }
+    ],
+    "boundary_parameters": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null
+      }
+    ],
+    "force_field_parameters": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null
+      }
+    ],
+    "spatial_resolution": [
+      {
+        "number_of_cells": null,
+        "number_of_blocks": null,
+        "number_of_points_x": null,
+        "number_of_points_y": null,
+        "number_of_points_z": null,
+        "interval_x": null,
+        "interval_y": null,
+        "interval_z": null,
+        "unit": null,
+        "scaling_formular": null
+      }
+    ],
+    "force_field": [
+      {
+        "name": null,
+        "parameters": null
       }
     ]
   }

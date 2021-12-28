@@ -4,6 +4,16 @@
   "title": "process",
   "type": "object",
   "properties": {
+    "software": {
+      "typeName": "processSoftware",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about used software.",
+      "items": {
+        "$ref": "#/definitions/software"
+      }
+    },
     "instruments": {
       "typeName": "processInstru",
       "type": "array",
@@ -14,24 +24,14 @@
         "$ref": "#/definitions/instruments"
       }
     },
-    "processing_methods": {
-      "typeName": "processMethods",
+    "method_parameters": {
+      "typeName": "processMethodsPar",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Information about used methods in the data life cycle.",
+      "description": "Parameters relevant for processing methods.",
       "items": {
-        "$ref": "#/definitions/processing_methods"
-      }
-    },
-    "software": {
-      "typeName": "processSoftware",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Information about used software.",
-      "items": {
-        "$ref": "#/definitions/software"
+        "$ref": "#/definitions/method_parameters"
       }
     },
     "processing_steps": {
@@ -54,14 +54,14 @@
         "$ref": "#/definitions/environments"
       }
     },
-    "method_parameters": {
-      "typeName": "processMethodsPar",
+    "processing_methods": {
+      "typeName": "processMethods",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Parameters relevant for processing methods.",
+      "description": "Information about used methods in the data life cycle.",
       "items": {
-        "$ref": "#/definitions/method_parameters"
+        "$ref": "#/definitions/processing_methods"
       }
     },
     "_metadatablock_name": {
@@ -70,6 +70,59 @@
     }
   },
   "definitions": {
+    "software": {
+      "properties": {
+        "name": {
+          "typeName": "processSoftwareName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the software."
+        },
+        "version": {
+          "typeName": "processSoftwareVersion",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Version of the software."
+        },
+        "id_type": {
+          "typeName": "processSoftwareIDType",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "The type of digital identifier used for this software (e.g., Digital Object Identifier (DOI))."
+        },
+        "id_number": {
+          "typeName": "processSoftwareIDNumber",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The identifier for the selected ID type."
+        },
+        "citation": {
+          "typeName": "processSoftwareCitation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Assosicated text publication to the software."
+        },
+        "url": {
+          "typeName": "processSoftwareURL",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Link to the software, code repository or application."
+        },
+        "license": {
+          "typeName": "processSoftwareLicence",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The license type of the software."
+        }
+      }
+    },
     "instruments": {
       "properties": {
         "name": {
@@ -123,81 +176,42 @@
         }
       }
     },
-    "processing_methods": {
+    "method_parameters": {
       "properties": {
         "name": {
-          "typeName": "processMethodsName",
+          "typeName": "processMethodsParName",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Name of the method as free text."
+          "description": "Name of the parameter."
         },
-        "description": {
-          "typeName": "processMethodsDescription",
+        "symbol": {
+          "typeName": "processMethodsParSymbol",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Description of the method as free text"
+          "description": "The symbol used to describe this parameter."
         },
-        "parameters": {
-          "typeName": "processMethodsPars",
+        "unit": {
+          "typeName": "processMethodsParUnit",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "List of all parameter names relevant for this method (detailed information about parameters should be given under Method Parameters)."
-        }
-      }
-    },
-    "software": {
-      "properties": {
-        "name": {
-          "typeName": "processSoftwareName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the software."
+          "description": "The unit or scale of this parameter."
         },
-        "version": {
-          "typeName": "processSoftwareVersion",
+        "value": {
+          "typeName": "processMethodsParValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The (numerical) value of this parameter."
+        },
+        "textual_value": {
+          "typeName": "processMethodsParTextValue",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Version of the software."
-        },
-        "id_type": {
-          "typeName": "processSoftwareIDType",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "The type of digital identifier used for this software (e.g., Digital Object Identifier (DOI))."
-        },
-        "id_number": {
-          "typeName": "processSoftwareIDNumber",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The identifier for the selected ID type."
-        },
-        "citation": {
-          "typeName": "processSoftwareCitation",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Assosicated text publication to the software."
-        },
-        "url": {
-          "typeName": "processSoftwareURL",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Link to the software, code repository or application."
-        },
-        "license": {
-          "typeName": "processSoftwareLicence",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The license type of the software."
+          "description": "The value of this method parameter. (for non numerical values)"
         }
       }
     },
@@ -307,52 +321,38 @@
         }
       }
     },
-    "method_parameters": {
+    "processing_methods": {
       "properties": {
         "name": {
-          "typeName": "processMethodsParName",
+          "typeName": "processMethodsName",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Name of the parameter."
+          "description": "Name of the method as free text."
         },
-        "symbol": {
-          "typeName": "processMethodsParSymbol",
+        "description": {
+          "typeName": "processMethodsDescription",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "The symbol used to describe this parameter."
+          "description": "Description of the method as free text"
         },
-        "unit": {
-          "typeName": "processMethodsParUnit",
+        "parameters": {
+          "typeName": "processMethodsPars",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "The unit or scale of this parameter."
-        },
-        "value": {
-          "typeName": "processMethodsParValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The (numerical) value of this parameter."
-        },
-        "textual_value": {
-          "typeName": "processMethodsParTextValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The value of this method parameter. (for non numerical values)"
+          "description": "List of all parameter names relevant for this method (detailed information about parameters should be given under Method Parameters)."
         }
       }
     }
   },
   "required": [
-    "instruments",
-    "processing_methods",
     "software",
+    "instruments",
+    "method_parameters",
     "processing_steps",
     "environments",
-    "method_parameters"
+    "processing_methods"
   ]
 }
