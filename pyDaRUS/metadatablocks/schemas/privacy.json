@@ -9,21 +9,35 @@
       "typeClass": "controlledVocabulary",
       "multiple": false,
       "type": "string",
-      "description": "Does the dataset contain personal data according to Art. 4 GDPR?"
+      "description": "Does the dataset contain personal data according to Art. 4 GDPR?",
+      "enum": [
+        "no",
+        "yes, but anonymized",
+        "yes, but pseudonymized",
+        "yes"
+      ]
     },
     "special_categories": {
       "typeName": "privSpecial",
       "typeClass": "controlledVocabulary",
       "multiple": false,
       "type": "string",
-      "description": "Does the dataset contain special categories of personal data according to Art.9 GDPR?"
+      "description": "Does the dataset contain special categories of personal data according to Art.9 GDPR?",
+      "enum": [
+        "no",
+        "yes"
+      ]
     },
     "explicit_consent": {
       "typeName": "privConsent",
       "typeClass": "controlledVocabulary",
       "multiple": false,
       "type": "string",
-      "description": "Did each person whose information appears in the data give explicit permission to share the data?"
+      "description": "Did each person whose information appears in the data give explicit permission to share the data?",
+      "enum": [
+        "no",
+        "yes"
+      ]
     },
     "terms_of_consent": {
       "typeName": "privTermsOfConsent",

@@ -1,10 +1,17 @@
 {
   "EnzymeMl": {
-    "kinetic_parameters": [
+    "proteins": [
       {
+        "identifier": null,
         "name": null,
-        "value": null,
+        "vessel_reference": null,
+        "initial_concentration": null,
         "unit": null,
+        "constant": null,
+        "sequence": null,
+        "organism": null,
+        "uniprotid": null,
+        "ecnumber": null,
         "sbo_term": null
       }
     ],
@@ -21,14 +28,6 @@
         "sbo_term": null
       }
     ],
-    "vessels": [
-      {
-        "name": null,
-        "size": null,
-        "unit": null,
-        "constant": null
-      }
-    ],
     "reactions": [
       {
         "name": null,
@@ -41,6 +40,14 @@
         "equation": null
       }
     ],
+    "kinetic_parameters": [
+      {
+        "name": null,
+        "value": null,
+        "unit": null,
+        "sbo_term": null
+      }
+    ],
     "kinetic_law": [
       {
         "name": null,
@@ -48,19 +55,12 @@
         "kinetic_model": null
       }
     ],
-    "proteins": [
+    "vessels": [
       {
-        "identifier": null,
         "name": null,
-        "vessel_reference": null,
-        "initial_concentration": null,
+        "size": null,
         "unit": null,
-        "constant": null,
-        "sequence": null,
-        "organism": null,
-        "uniprotid": null,
-        "ecnumber": null,
-        "sbo_term": null
+        "constant": null
       }
     ]
   }

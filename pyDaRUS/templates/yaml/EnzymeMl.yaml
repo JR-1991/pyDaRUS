@@ -1,37 +1,4 @@
 EnzymeMl:
-  kinetic_parameters:
-    - name: null
-      value: null
-      unit: null
-      sbo_term: null
-  reactants:
-    - identifier: null
-      name: null
-      vessel_reference: null
-      initial_concentration: null
-      unit: null
-      constant: null
-      inchicode: null
-      smilescode: null
-      sbo_term: null
-  vessels:
-    - name: null
-      size: null
-      unit: null
-      constant: null
-  reactions:
-    - name: null
-      temperature_value: null
-      temperature_unit: null
-      ph_value: null
-      educts: null
-      products: null
-      modifiers: null
-      equation: null
-  kinetic_law:
-    - name: null
-      reaction_reference: null
-      kinetic_model: null
   proteins:
     - identifier: null
       name: null
@@ -44,3 +11,36 @@ EnzymeMl:
       uniprotid: null
       ecnumber: null
       sbo_term: null
+  reactants:
+    - identifier: null
+      name: null
+      vessel_reference: null
+      initial_concentration: null
+      unit: null
+      constant: null
+      inchicode: null
+      smilescode: null
+      sbo_term: null
+  reactions:
+    - name: null
+      temperature_value: null
+      temperature_unit: null
+      ph_value: null
+      educts: null
+      products: null
+      modifiers: null
+      equation: null
+  kinetic_parameters:
+    - name: null
+      value: null
+      unit: null
+      sbo_term: null
+  kinetic_law:
+    - name: null
+      reaction_reference: null
+      kinetic_model: null
+  vessels:
+    - name: null
+      size: null
+      unit: null
+      constant: null

@@ -21,56 +21,61 @@ Citation:
   documentation_and_access_to_sources: null
   did_it_work: null
   explanation: null
-  other_id:
-    - agency: null
-      identifier: null
-  date_of_collection:
-    - start: null
-      end: null
+  related_publication:
+    - citation: null
+      id_type: null
+      id_number: null
+      url: null
+  project:
+    - name: null
+      level: null
   software:
     - name: null
       version: null
+  contributor:
+    - type: null
+      name: null
+  date_of_collection:
+    - start: null
+      end: null
   contact:
     - name: null
       affiliation: null
       email: null
-  producer:
+  topic_classification:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
+  distributor:
     - name: null
       affiliation: null
       abbreviation: null
       url: null
       logo_url: null
-  series:
-    - name: null
-      information: null
-  storage:
-    - name: null
-      location: null
-      size: null
-  time_period_covered:
-    - start: null
-      end: null
-  description:
-    - text: null
-      date: null
-  topic_classification:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  contributor:
-    - type: null
-      name: null
-  project:
-    - name: null
-      level: null
-  grant_information:
-    - grant_agency: null
-      grant_number: null
   keyword:
     - term: null
       vocabulary: null
       vocabulary_url: null
-  distributor:
+  storage:
+    - name: null
+      location: null
+      size: null
+  grant_information:
+    - grant_agency: null
+      grant_number: null
+  time_period_covered:
+    - start: null
+      end: null
+  series:
+    - name: null
+      information: null
+  description:
+    - text: null
+      date: null
+  other_id:
+    - agency: null
+      identifier: null
+  producer:
     - name: null
       affiliation: null
       abbreviation: null
@@ -81,8 +86,3 @@ Citation:
       affiliation: null
       identifier_scheme: null
       identifier: null
-  related_publication:
-    - citation: null
-      id_type: null
-      id_number: null
-      url: null
