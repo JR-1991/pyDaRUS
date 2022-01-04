@@ -35,7 +35,7 @@
       "typeName": "archiveArchivedAt",
       "typeClass": "primitive",
       "multiple": true,
-      "type": "string",
+      "type": "array",
       "description": "The location where the files are archived"
     },
     "_metadatablock_name": {

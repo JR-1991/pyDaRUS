@@ -43,14 +43,14 @@
       "typeName": "privTermsOfConsent",
       "typeClass": "primitive",
       "multiple": true,
-      "type": "string",
+      "type": "array",
       "description": "Did the content has any restrictions on sharing?"
     },
     "measures": {
       "typeName": "privMeasures",
       "typeClass": "primitive",
       "multiple": true,
-      "type": "string",
+      "type": "array",
       "description": "Which technical and organisational measures are taken to secure the data (e.g. encryption of the data, rights management)?"
     },
     "_metadatablock_name": {

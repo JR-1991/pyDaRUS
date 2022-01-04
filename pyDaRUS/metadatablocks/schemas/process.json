@@ -4,36 +4,6 @@
   "title": "process",
   "type": "object",
   "properties": {
-    "processing_methods": {
-      "typeName": "processMethods",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Information about used methods in the data life cycle.",
-      "items": {
-        "$ref": "#/definitions/processing_methods"
-      }
-    },
-    "environments": {
-      "typeName": "processEnv",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "(Computation) environments of the data generation. ",
-      "items": {
-        "$ref": "#/definitions/environments"
-      }
-    },
-    "processing_steps": {
-      "typeName": "processStep",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Specification of the processing steps in the data life cycle.",
-      "items": {
-        "$ref": "#/definitions/processing_steps"
-      }
-    },
     "instruments": {
       "typeName": "processInstru",
       "type": "array",
@@ -54,6 +24,36 @@
         "$ref": "#/definitions/software"
       }
     },
+    "processing_steps": {
+      "typeName": "processStep",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Specification of the processing steps in the data life cycle.",
+      "items": {
+        "$ref": "#/definitions/processing_steps"
+      }
+    },
+    "processing_methods": {
+      "typeName": "processMethods",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about used methods in the data life cycle.",
+      "items": {
+        "$ref": "#/definitions/processing_methods"
+      }
+    },
+    "environments": {
+      "typeName": "processEnv",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "(Computation) environments of the data generation. ",
+      "items": {
+        "$ref": "#/definitions/environments"
+      }
+    },
     "method_parameters": {
       "typeName": "processMethodsPar",
       "type": "array",
@@ -70,143 +70,6 @@
     }
   },
   "definitions": {
-    "processing_methods": {
-      "properties": {
-        "name": {
-          "typeName": "processMethodsName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the method as free text."
-        },
-        "description": {
-          "typeName": "processMethodsDescription",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Description of the method as free text"
-        },
-        "parameters": {
-          "typeName": "processMethodsPars",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of all parameter names relevant for this method (detailed information about parameters should be given under Method Parameters)."
-        }
-      }
-    },
-    "environments": {
-      "properties": {
-        "name": {
-          "typeName": "processEnvName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the environment."
-        },
-        "compiler_names_and_flags": {
-          "typeName": "processEnvCompName",
-          "typeClass": "primitive",
-          "multiple": true,
-          "type": "string",
-          "description": "Name and flags of the used compilers."
-        },
-        "number_of_nodes": {
-          "typeName": "processEnvNodes",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "integer",
-          "description": "Number of compute nodes inside a high performance cluster environment."
-        },
-        "ppn": {
-          "typeName": "processEnvPPN",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "integer",
-          "description": "Processors per node"
-        }
-      }
-    },
-    "processing_steps": {
-      "properties": {
-        "id": {
-          "typeName": "processStepId",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "integer",
-          "description": "Used to order the processing steps."
-        },
-        "type": {
-          "typeName": "processStepType",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the position in the data life cycle.",
-          "enum": [
-            "Generation",
-            "Postprocessing",
-            "Analysis",
-            "Other"
-          ]
-        },
-        "date": {
-          "typeName": "processStepDate",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Date this step has been performed."
-        },
-        "methods": {
-          "typeName": "processStepMethods",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of methods used in this processing step (detailed information about methods should be given under Processing Methods)."
-        },
-        "error_method": {
-          "typeName": "processStepErrorMethod",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Method used to measure the errors or uncertainties of this processing step."
-        },
-        "software": {
-          "typeName": "processStepSoftware",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of software names used in this processing step (detailed information about software should be given under Software)."
-        },
-        "instruments": {
-          "typeName": "processStepHardware",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of instrumental hardware used in this processing step (detailed information about instruments should be given under Instruments)."
-        },
-        "environment": {
-          "typeName": "processStepEnvironment",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the environment used for this processing step (detailed information about the environment should be given under Environments)."
-        },
-        "input": {
-          "typeName": "processStepInput",
-          "typeClass": "primitive",
-          "multiple": true,
-          "type": "string",
-          "description": "Name of the file or object that was the input of this processing step"
-        },
-        "output": {
-          "typeName": "processStepOutput",
-          "typeClass": "primitive",
-          "multiple": true,
-          "type": "string",
-          "description": "Name of the file or object that was the output of this processing step"
-        }
-      }
-    },
     "instruments": {
       "properties": {
         "name": {
@@ -234,14 +97,14 @@
           "typeName": "processInstruPartnum",
           "typeClass": "primitive",
           "multiple": true,
-          "type": "string",
+          "type": "array",
           "description": "A vendors part number for an instrument or a piece of equipment."
         },
         "serial_number": {
           "typeName": "processInstruSerialnum",
           "typeClass": "primitive",
           "multiple": true,
-          "type": "string",
+          "type": "array",
           "description": "A vendors serial number for an instrument or a piece of equipment."
         },
         "software": {
@@ -332,6 +195,143 @@
         }
       }
     },
+    "processing_steps": {
+      "properties": {
+        "id": {
+          "typeName": "processStepId",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "Used to order the processing steps."
+        },
+        "type": {
+          "typeName": "processStepType",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the position in the data life cycle.",
+          "enum": [
+            "Generation",
+            "Postprocessing",
+            "Analysis",
+            "Other"
+          ]
+        },
+        "date": {
+          "typeName": "processStepDate",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Date this step has been performed."
+        },
+        "methods": {
+          "typeName": "processStepMethods",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of methods used in this processing step (detailed information about methods should be given under Processing Methods)."
+        },
+        "error_method": {
+          "typeName": "processStepErrorMethod",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Method used to measure the errors or uncertainties of this processing step."
+        },
+        "software": {
+          "typeName": "processStepSoftware",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of software names used in this processing step (detailed information about software should be given under Software)."
+        },
+        "instruments": {
+          "typeName": "processStepHardware",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of instrumental hardware used in this processing step (detailed information about instruments should be given under Instruments)."
+        },
+        "environment": {
+          "typeName": "processStepEnvironment",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the environment used for this processing step (detailed information about the environment should be given under Environments)."
+        },
+        "input": {
+          "typeName": "processStepInput",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "array",
+          "description": "Name of the file or object that was the input of this processing step"
+        },
+        "output": {
+          "typeName": "processStepOutput",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "array",
+          "description": "Name of the file or object that was the output of this processing step"
+        }
+      }
+    },
+    "processing_methods": {
+      "properties": {
+        "name": {
+          "typeName": "processMethodsName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the method as free text."
+        },
+        "description": {
+          "typeName": "processMethodsDescription",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Description of the method as free text"
+        },
+        "parameters": {
+          "typeName": "processMethodsPars",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of all parameter names relevant for this method (detailed information about parameters should be given under Method Parameters)."
+        }
+      }
+    },
+    "environments": {
+      "properties": {
+        "name": {
+          "typeName": "processEnvName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the environment."
+        },
+        "compiler_names_and_flags": {
+          "typeName": "processEnvCompName",
+          "typeClass": "primitive",
+          "multiple": true,
+          "type": "array",
+          "description": "Name and flags of the used compilers."
+        },
+        "number_of_nodes": {
+          "typeName": "processEnvNodes",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "Number of compute nodes inside a high performance cluster environment."
+        },
+        "ppn": {
+          "typeName": "processEnvPPN",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "Processors per node"
+        }
+      }
+    },
     "method_parameters": {
       "properties": {
         "name": {
@@ -373,11 +373,11 @@
     }
   },
   "required": [
-    "processing_methods",
-    "environments",
-    "processing_steps",
     "instruments",
     "software",
+    "processing_steps",
+    "processing_methods",
+    "environments",
     "method_parameters"
   ]
 }
