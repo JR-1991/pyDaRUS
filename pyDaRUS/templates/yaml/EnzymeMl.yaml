@@ -1,52 +1,46 @@
 EnzymeMl:
-  kinetic_law:
-    null:
-      - name: null
-        reaction_reference: null
-        kinetic_model: null
-  reactions:
-    null:
-      - name: null
-        temperature_value: null
-        temperature_unit: null
-        ph_value: null
-        educts: null
-        products: null
-        modifiers: null
-        equation: null
-  proteins:
-    null:
-      - identifier: null
-        name: null
-        vessel_reference: null
-        initial_concentration: null
-        unit: null
-        constant: null
-        sequence: null
-        organism: null
-        uniprotid: null
-        ecnumber: null
-        sbo_term: null
-  vessels:
-    null:
-      - name: null
-        size: null
-        unit: null
-        constant: null
   reactants:
-    null:
-      - identifier: null
-        name: null
-        vessel_reference: null
-        initial_concentration: null
-        unit: null
-        constant: null
-        inchicode: null
-        smilescode: null
-        sbo_term: null
+    - identifier: null
+      name: null
+      vessel_reference: null
+      initial_concentration: null
+      unit: null
+      constant: null
+      inchicode: null
+      smilescode: null
+      sbo_term: null
+  proteins:
+    - identifier: null
+      name: null
+      vessel_reference: null
+      initial_concentration: null
+      unit: null
+      constant: null
+      sequence: null
+      organism: null
+      uniprotid: null
+      ecnumber: null
+      sbo_term: null
+  reactions:
+    - name: null
+      temperature_value: null
+      temperature_unit: null
+      ph_value: null
+      educts: null
+      products: null
+      modifiers: null
+      equation: null
+  vessels:
+    - name: null
+      size: null
+      unit: null
+      constant: null
   kinetic_parameters:
-    null:
-      - name: null
-        value: null
-        unit: null
-        sbo_term: null
+    - name: null
+      value: null
+      unit: null
+      sbo_term: null
+  kinetic_law:
+    - name: null
+      reaction_reference: null
+      kinetic_model: null

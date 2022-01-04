@@ -17,11 +17,9 @@ CodeMeta:
   release_notes: null
   continous_integration: null
   issue_tracker: null
-  software_requirements:
-    null:
-      - name: null
-        url: null
   software_suggestions:
-    null:
-      - name: null
-        url: null
+    - name: null
+      url: null
+  software_requirements:
+    - name: null
+      url: null
