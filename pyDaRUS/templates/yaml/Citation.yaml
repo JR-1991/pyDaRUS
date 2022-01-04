@@ -21,68 +21,85 @@ Citation:
   documentation_and_access_to_sources: null
   did_it_work: null
   explanation: null
-  related_publication:
-    - citation: null
-      id_type: null
-      id_number: null
-      url: null
-  project:
-    - name: null
-      level: null
-  software:
-    - name: null
-      version: null
-  contributor:
-    - type: null
-      name: null
-  date_of_collection:
-    - start: null
-      end: null
   contact:
-    - name: null
-      affiliation: null
-      email: null
-  topic_classification:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  distributor:
-    - name: null
-      affiliation: null
-      abbreviation: null
-      url: null
-      logo_url: null
-  keyword:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  storage:
-    - name: null
-      location: null
-      size: null
-  grant_information:
-    - grant_agency: null
-      grant_number: null
-  time_period_covered:
-    - start: null
-      end: null
-  series:
-    - name: null
-      information: null
+    null:
+      - name: null
+        affiliation: null
+        email: null
   description:
-    - text: null
-      date: null
+    null:
+      - text: null
+        date: null
+  storage:
+    null:
+      - name: null
+        location: null
+        size: null
+  software:
+    null:
+      - name: null
+        version: null
   other_id:
-    - agency: null
-      identifier: null
+    null:
+      - agency: null
+        identifier: null
+  project:
+    null:
+      - name: null
+        level: null
+  series:
+    null:
+      - name: null
+        information: null
+  time_period_covered:
+    null:
+      - start: null
+        end: null
+  keyword:
+    null:
+      - term: null
+        vocabulary: null
+        vocabulary_url: null
+  date_of_collection:
+    null:
+      - start: null
+        end: null
   producer:
-    - name: null
-      affiliation: null
-      abbreviation: null
-      url: null
-      logo_url: null
+    null:
+      - name: null
+        affiliation: null
+        abbreviation: null
+        url: null
+        logo_url: null
   author:
-    - name: null
-      affiliation: null
-      identifier_scheme: null
-      identifier: null
+    null:
+      - name: null
+        affiliation: null
+        identifier_scheme: null
+        identifier: null
+  distributor:
+    null:
+      - name: null
+        affiliation: null
+        abbreviation: null
+        url: null
+        logo_url: null
+  contributor:
+    null:
+      - type: null
+        name: null
+  grant_information:
+    null:
+      - grant_agency: null
+        grant_number: null
+  topic_classification:
+    null:
+      - term: null
+        vocabulary: null
+        vocabulary_url: null
+  related_publication:
+    null:
+      - citation: null
+        id_type: null
+        id_number: null
+        url: null
