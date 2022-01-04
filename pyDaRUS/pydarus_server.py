@@ -8,7 +8,7 @@ from pyDaRUS.metadatablocks.archive import Archive
 from pyDaRUS.metadatablocks.process import Process
 from pyDaRUS.metadatablocks.privacy import Privacy
 
-app = FastAPI(title="pyDaRUS", version="1.0", docs_url="/")
+app = FastAPI(title="pyDaRUS", version="1.0", redoc_url="/")
 @app.post(
     "/create/citation",
     summary="Create Citation block",
