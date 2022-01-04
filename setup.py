@@ -9,11 +9,12 @@ setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'easyDataverse',
+        'fastapi',
+        'uvicorn',
         'pydantic',
         'jinja2',
         'pyDataverse',
         'pandas',
-        'datamodel_code_generator',
         'pyaml',
     ]
 )
