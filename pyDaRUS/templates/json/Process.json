@@ -9,18 +9,11 @@
         "textual_value": null
       }
     ],
-    "processing_steps": [
+    "processing_methods": [
       {
-        "id": null,
-        "type": null,
-        "date": null,
-        "methods": null,
-        "error_method": null,
-        "software": null,
-        "instruments": null,
-        "environment": null,
-        "input": null,
-        "output": null
+        "name": null,
+        "description": null,
+        "parameters": null
       }
     ],
     "software": [
@@ -34,13 +27,6 @@
         "license": null
       }
     ],
-    "processing_methods": [
-      {
-        "name": null,
-        "description": null,
-        "parameters": null
-      }
-    ],
     "instruments": [
       {
         "name": null,
@@ -50,6 +36,20 @@
         "serial_number": null,
         "software": null,
         "location": null
+      }
+    ],
+    "processing_steps": [
+      {
+        "id": null,
+        "type": null,
+        "date": null,
+        "methods": null,
+        "error_method": null,
+        "software": null,
+        "instruments": null,
+        "environment": null,
+        "input": null,
+        "output": null
       }
     ],
     "environments": [

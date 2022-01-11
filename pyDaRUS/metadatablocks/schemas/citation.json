@@ -4,6 +4,86 @@
   "title": "citation",
   "type": "object",
   "properties": {
+    "software": {
+      "typeName": "software",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about the software used to generate the Dataset.",
+      "items": {
+        "$ref": "#/definitions/software"
+      }
+    },
+    "grant_information": {
+      "typeName": "grantNumber",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Grant Information",
+      "items": {
+        "$ref": "#/definitions/grant_information"
+      }
+    },
+    "author": {
+      "typeName": "author",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "The person(s), corporate body(ies), or agency(ies) responsible for creating the work.",
+      "items": {
+        "$ref": "#/definitions/author"
+      }
+    },
+    "project": {
+      "typeName": "project",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about the project as context of the data.",
+      "items": {
+        "$ref": "#/definitions/project"
+      }
+    },
+    "keyword": {
+      "typeName": "keyword",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Key terms that describe important aspects of the Dataset.",
+      "items": {
+        "$ref": "#/definitions/keyword"
+      }
+    },
+    "series": {
+      "typeName": "series",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about the Dataset series.",
+      "items": {
+        "$ref": "#/definitions/series"
+      }
+    },
+    "storage": {
+      "typeName": "storage",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Information about data that could NOT be uploaded into the system.",
+      "items": {
+        "$ref": "#/definitions/storage"
+      }
+    },
+    "distributor": {
+      "typeName": "distributor",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions.",
+      "items": {
+        "$ref": "#/definitions/distributor"
+      }
+    },
     "title": {
       "typeName": "title",
       "typeClass": "primitive",
@@ -365,34 +445,14 @@
       "type": "string",
       "description": "Description of your last answer. Explanation why it worked or not."
     },
-    "description": {
-      "typeName": "dsDescription",
+    "topic_classification": {
+      "typeName": "topicClassification",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "A summary describing the purpose, nature, and scope of the Dataset.",
+      "description": "The classification field indicates the broad important topic(s) and subjects that the data cover. Library of Congress subject terms may be used here.  ",
       "items": {
-        "$ref": "#/definitions/description"
-      }
-    },
-    "project": {
-      "typeName": "project",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Information about the project as context of the data.",
-      "items": {
-        "$ref": "#/definitions/project"
-      }
-    },
-    "distributor": {
-      "typeName": "distributor",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions.",
-      "items": {
-        "$ref": "#/definitions/distributor"
+        "$ref": "#/definitions/topic_classification"
       }
     },
     "time_period_covered": {
@@ -405,24 +465,14 @@
         "$ref": "#/definitions/time_period_covered"
       }
     },
-    "other_id": {
-      "typeName": "otherId",
+    "description": {
+      "typeName": "dsDescription",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Another unique identifier that identifies this Dataset (e.g., producer's or another repository's number).",
+      "description": "A summary describing the purpose, nature, and scope of the Dataset.",
       "items": {
-        "$ref": "#/definitions/other_id"
-      }
-    },
-    "author": {
-      "typeName": "author",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "The person(s), corporate body(ies), or agency(ies) responsible for creating the work.",
-      "items": {
-        "$ref": "#/definitions/author"
+        "$ref": "#/definitions/description"
       }
     },
     "producer": {
@@ -435,44 +485,24 @@
         "$ref": "#/definitions/producer"
       }
     },
-    "storage": {
-      "typeName": "storage",
+    "other_id": {
+      "typeName": "otherId",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Information about data that could NOT be uploaded into the system.",
+      "description": "Another unique identifier that identifies this Dataset (e.g., producer's or another repository's number).",
       "items": {
-        "$ref": "#/definitions/storage"
+        "$ref": "#/definitions/other_id"
       }
     },
-    "contact": {
-      "typeName": "datasetContact",
+    "date_of_collection": {
+      "typeName": "dateOfCollection",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "The contact(s) for this Dataset.",
+      "description": "Contains the date(s) when the data were collected.",
       "items": {
-        "$ref": "#/definitions/contact"
-      }
-    },
-    "software": {
-      "typeName": "software",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Information about the software used to generate the Dataset.",
-      "items": {
-        "$ref": "#/definitions/software"
-      }
-    },
-    "keyword": {
-      "typeName": "keyword",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Key terms that describe important aspects of the Dataset.",
-      "items": {
-        "$ref": "#/definitions/keyword"
+        "$ref": "#/definitions/date_of_collection"
       }
     },
     "contributor": {
@@ -485,44 +515,14 @@
         "$ref": "#/definitions/contributor"
       }
     },
-    "grant_information": {
-      "typeName": "grantNumber",
+    "contact": {
+      "typeName": "datasetContact",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Grant Information",
+      "description": "The contact(s) for this Dataset.",
       "items": {
-        "$ref": "#/definitions/grant_information"
-      }
-    },
-    "series": {
-      "typeName": "series",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Information about the Dataset series.",
-      "items": {
-        "$ref": "#/definitions/series"
-      }
-    },
-    "topic_classification": {
-      "typeName": "topicClassification",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "The classification field indicates the broad important topic(s) and subjects that the data cover. Library of Congress subject terms may be used here.  ",
-      "items": {
-        "$ref": "#/definitions/topic_classification"
-      }
-    },
-    "date_of_collection": {
-      "typeName": "dateOfCollection",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Contains the date(s) when the data were collected.",
-      "items": {
-        "$ref": "#/definitions/date_of_collection"
+        "$ref": "#/definitions/contact"
       }
     },
     "related_publication": {
@@ -541,114 +541,39 @@
     }
   },
   "definitions": {
-    "description": {
-      "properties": {
-        "text": {
-          "typeName": "dsDescriptionValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "A summary describing the purpose, nature, and scope of the Dataset."
-        },
-        "date": {
-          "typeName": "dsDescriptionDate",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "In cases where a Dataset contains more than one description (for example, one might be supplied by the data producer and another prepared by the data repository where the data are deposited), the date attribute is used to distinguish between the two descriptions. The date attribute follows the ISO convention of YYYY-MM-DD."
-        }
-      }
-    },
-    "project": {
+    "software": {
       "properties": {
         "name": {
-          "typeName": "projectName",
+          "typeName": "softwareName",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of software used to generate the Dataset."
+        },
+        "version": {
+          "typeName": "softwareVersion",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Name of the project."
-        },
-        "level": {
-          "typeName": "projectLevel",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "integer",
-          "description": "The main project should get level zero. Subprojects can get higher levels."
+          "description": "Version of the software used to generate the Dataset."
         }
       }
     },
-    "distributor": {
+    "grant_information": {
       "properties": {
-        "name": {
-          "typeName": "distributorName",
+        "grant_agency": {
+          "typeName": "grantNumberAgency",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Distributor name"
+          "description": "Grant Number Agency"
         },
-        "affiliation": {
-          "typeName": "distributorAffiliation",
+        "grant_number": {
+          "typeName": "grantNumberValue",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "The organization with which the distributor contact is affiliated."
-        },
-        "abbreviation": {
-          "typeName": "distributorAbbreviation",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The abbreviation by which this distributor is commonly known (e.g., IQSS, ICPSR)."
-        },
-        "url": {
-          "typeName": "distributorURL",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Distributor URL points to the distributor's web presence, if appropriate. Enter an absolute URL where the distributor's web site is found, such as http://www.my.org."
-        },
-        "logo_url": {
-          "typeName": "distributorLogoURL",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "URL of the distributor's logo, which points to this  distributor's web-accessible logo image. Enter an absolute URL where the distributor's logo image is found, such as http://www.my.org/images/logo.gif."
-        }
-      }
-    },
-    "time_period_covered": {
-      "properties": {
-        "start": {
-          "typeName": "timePeriodCoveredStart",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Start date which reflects the time period covered by the data, not the dates of coding or making documents machine-readable or the dates the data were collected."
-        },
-        "end": {
-          "typeName": "timePeriodCoveredEnd",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "End date which reflects the time period covered by the data, not the dates of coding or making documents machine-readable or the dates the data were collected."
-        }
-      }
-    },
-    "other_id": {
-      "properties": {
-        "agency": {
-          "typeName": "otherIdAgency",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of agency which generated this identifier."
-        },
-        "identifier": {
-          "typeName": "otherIdValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Other identifier that corresponds to this Dataset."
+          "description": "The grant or contract number of the project that  sponsored the effort."
         }
       }
     },
@@ -694,6 +619,192 @@
         }
       }
     },
+    "project": {
+      "properties": {
+        "name": {
+          "typeName": "projectName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the project."
+        },
+        "level": {
+          "typeName": "projectLevel",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "The main project should get level zero. Subprojects can get higher levels."
+        }
+      }
+    },
+    "keyword": {
+      "properties": {
+        "term": {
+          "typeName": "keywordValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Key terms that describe important aspects of the Dataset. Can be used for building keyword indexes and for classification and retrieval purposes. A controlled vocabulary can be employed. The vocab attribute is provided for specification of the controlled vocabulary in use, such as LCSH, MeSH, or others. The vocabURI attribute specifies the location for the full controlled vocabulary."
+        },
+        "vocabulary": {
+          "typeName": "keywordVocabulary",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "For the specification of the keyword controlled vocabulary in use, such as LCSH, MeSH, or others."
+        },
+        "vocabulary_url": {
+          "typeName": "keywordVocabularyURI",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Keyword vocabulary URL points to the web presence that describes the keyword vocabulary, if appropriate. Enter an absolute URL where the keyword vocabulary web site is found, such as http://www.my.org."
+        }
+      }
+    },
+    "series": {
+      "properties": {
+        "name": {
+          "typeName": "seriesName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the dataset series to which the Dataset belongs."
+        },
+        "information": {
+          "typeName": "seriesInformation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "History of the series and summary of those features that apply to the series as a whole."
+        }
+      }
+    },
+    "storage": {
+      "properties": {
+        "name": {
+          "typeName": "storageFile",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The name of the file, directory or archive."
+        },
+        "location": {
+          "typeName": "storageLocation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The dns, path or url of the location the object is stored. "
+        },
+        "size": {
+          "typeName": "storageSize",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The approximated size of the object. Give also Units."
+        }
+      }
+    },
+    "distributor": {
+      "properties": {
+        "name": {
+          "typeName": "distributorName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Distributor name"
+        },
+        "affiliation": {
+          "typeName": "distributorAffiliation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The organization with which the distributor contact is affiliated."
+        },
+        "abbreviation": {
+          "typeName": "distributorAbbreviation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The abbreviation by which this distributor is commonly known (e.g., IQSS, ICPSR)."
+        },
+        "url": {
+          "typeName": "distributorURL",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Distributor URL points to the distributor's web presence, if appropriate. Enter an absolute URL where the distributor's web site is found, such as http://www.my.org."
+        },
+        "logo_url": {
+          "typeName": "distributorLogoURL",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "URL of the distributor's logo, which points to this  distributor's web-accessible logo image. Enter an absolute URL where the distributor's logo image is found, such as http://www.my.org/images/logo.gif."
+        }
+      }
+    },
+    "topic_classification": {
+      "properties": {
+        "term": {
+          "typeName": "topicClassValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Topic or Subject term that is relevant to this Dataset."
+        },
+        "vocabulary": {
+          "typeName": "topicClassVocab",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc."
+        },
+        "vocabulary_url": {
+          "typeName": "topicClassVocabURI",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the URL location for the full controlled vocabulary."
+        }
+      }
+    },
+    "time_period_covered": {
+      "properties": {
+        "start": {
+          "typeName": "timePeriodCoveredStart",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Start date which reflects the time period covered by the data, not the dates of coding or making documents machine-readable or the dates the data were collected."
+        },
+        "end": {
+          "typeName": "timePeriodCoveredEnd",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "End date which reflects the time period covered by the data, not the dates of coding or making documents machine-readable or the dates the data were collected."
+        }
+      }
+    },
+    "description": {
+      "properties": {
+        "text": {
+          "typeName": "dsDescriptionValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "A summary describing the purpose, nature, and scope of the Dataset."
+        },
+        "date": {
+          "typeName": "dsDescriptionDate",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "In cases where a Dataset contains more than one description (for example, one might be supplied by the data producer and another prepared by the data repository where the data are deposited), the date attribute is used to distinguish between the two descriptions. The date attribute follows the ISO convention of YYYY-MM-DD."
+        }
+      }
+    },
     "producer": {
       "properties": {
         "name": {
@@ -733,96 +844,39 @@
         }
       }
     },
-    "storage": {
+    "other_id": {
       "properties": {
-        "name": {
-          "typeName": "storageFile",
+        "agency": {
+          "typeName": "otherIdAgency",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "The name of the file, directory or archive."
+          "description": "Name of agency which generated this identifier."
         },
-        "location": {
-          "typeName": "storageLocation",
+        "identifier": {
+          "typeName": "otherIdValue",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "The dns, path or url of the location the object is stored. "
-        },
-        "size": {
-          "typeName": "storageSize",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The approximated size of the object. Give also Units."
+          "description": "Other identifier that corresponds to this Dataset."
         }
       }
     },
-    "contact": {
+    "date_of_collection": {
       "properties": {
-        "name": {
-          "typeName": "datasetContactName",
+        "start": {
+          "typeName": "dateOfCollectionStart",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "The contact's Family Name, Given Name or the name of the organization."
+          "description": "Date when the data collection started."
         },
-        "affiliation": {
-          "typeName": "datasetContactAffiliation",
+        "end": {
+          "typeName": "dateOfCollectionEnd",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "The organization with which the contact is affiliated."
-        },
-        "email": {
-          "typeName": "datasetContactEmail",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The e-mail address(es) of the contact(s) for the Dataset. This will not be displayed."
-        }
-      }
-    },
-    "software": {
-      "properties": {
-        "name": {
-          "typeName": "softwareName",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of software used to generate the Dataset."
-        },
-        "version": {
-          "typeName": "softwareVersion",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Version of the software used to generate the Dataset."
-        }
-      }
-    },
-    "keyword": {
-      "properties": {
-        "term": {
-          "typeName": "keywordValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Key terms that describe important aspects of the Dataset. Can be used for building keyword indexes and for classification and retrieval purposes. A controlled vocabulary can be employed. The vocab attribute is provided for specification of the controlled vocabulary in use, such as LCSH, MeSH, or others. The vocabURI attribute specifies the location for the full controlled vocabulary."
-        },
-        "vocabulary": {
-          "typeName": "keywordVocabulary",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "For the specification of the keyword controlled vocabulary in use, such as LCSH, MeSH, or others."
-        },
-        "vocabulary_url": {
-          "typeName": "keywordVocabularyURI",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Keyword vocabulary URL points to the web presence that describes the keyword vocabulary, if appropriate. Enter an absolute URL where the keyword vocabulary web site is found, such as http://www.my.org."
+          "description": "Date when the data collection ended."
         }
       }
     },
@@ -863,82 +917,28 @@
         }
       }
     },
-    "grant_information": {
-      "properties": {
-        "grant_agency": {
-          "typeName": "grantNumberAgency",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Grant Number Agency"
-        },
-        "grant_number": {
-          "typeName": "grantNumberValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The grant or contract number of the project that  sponsored the effort."
-        }
-      }
-    },
-    "series": {
+    "contact": {
       "properties": {
         "name": {
-          "typeName": "seriesName",
+          "typeName": "datasetContactName",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Name of the dataset series to which the Dataset belongs."
+          "description": "The contact's Family Name, Given Name or the name of the organization."
         },
-        "information": {
-          "typeName": "seriesInformation",
+        "affiliation": {
+          "typeName": "datasetContactAffiliation",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "History of the series and summary of those features that apply to the series as a whole."
-        }
-      }
-    },
-    "topic_classification": {
-      "properties": {
-        "term": {
-          "typeName": "topicClassValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Topic or Subject term that is relevant to this Dataset."
+          "description": "The organization with which the contact is affiliated."
         },
-        "vocabulary": {
-          "typeName": "topicClassVocab",
+        "email": {
+          "typeName": "datasetContactEmail",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc."
-        },
-        "vocabulary_url": {
-          "typeName": "topicClassVocabURI",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the URL location for the full controlled vocabulary."
-        }
-      }
-    },
-    "date_of_collection": {
-      "properties": {
-        "start": {
-          "typeName": "dateOfCollectionStart",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Date when the data collection started."
-        },
-        "end": {
-          "typeName": "dateOfCollectionEnd",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Date when the data collection ended."
+          "description": "The e-mail address(es) of the contact(s) for the Dataset. This will not be displayed."
         }
       }
     },
@@ -995,22 +995,22 @@
     }
   },
   "required": [
-    "description",
-    "project",
-    "distributor",
-    "time_period_covered",
-    "other_id",
-    "author",
-    "producer",
-    "storage",
-    "contact",
     "software",
-    "keyword",
-    "contributor",
     "grant_information",
+    "author",
+    "project",
+    "keyword",
     "series",
+    "storage",
+    "distributor",
     "topic_classification",
+    "time_period_covered",
+    "description",
+    "producer",
+    "other_id",
     "date_of_collection",
+    "contributor",
+    "contact",
     "related_publication"
   ]
 }

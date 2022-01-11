@@ -5,6 +5,26 @@ Process:
       unit: null
       value: null
       textual_value: null
+  processing_methods:
+    - name: null
+      description: null
+      parameters: null
+  software:
+    - name: null
+      version: null
+      id_type: null
+      id_number: null
+      citation: null
+      url: null
+      license: null
+  instruments:
+    - name: null
+      description: null
+      version: null
+      part_number: null
+      serial_number: null
+      software: null
+      location: null
   processing_steps:
     - id: null
       type: null
@@ -16,26 +36,6 @@ Process:
       environment: null
       input: null
       output: null
-  software:
-    - name: null
-      version: null
-      id_type: null
-      id_number: null
-      citation: null
-      url: null
-      license: null
-  processing_methods:
-    - name: null
-      description: null
-      parameters: null
-  instruments:
-    - name: null
-      description: null
-      version: null
-      part_number: null
-      serial_number: null
-      software: null
-      location: null
   environments:
     - name: null
       compiler_names_and_flags: null

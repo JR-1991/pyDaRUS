@@ -1,4 +1,8 @@
 EnzymeMl:
+  kinetic_law:
+    - name: null
+      reaction_reference: null
+      kinetic_model: null
   reactants:
     - identifier: null
       name: null
@@ -21,6 +25,16 @@ EnzymeMl:
       uniprotid: null
       ecnumber: null
       sbo_term: null
+  kinetic_parameters:
+    - name: null
+      value: null
+      unit: null
+      sbo_term: null
+  vessels:
+    - name: null
+      size: null
+      unit: null
+      constant: null
   reactions:
     - name: null
       temperature_value: null
@@ -30,17 +44,3 @@ EnzymeMl:
       products: null
       modifiers: null
       equation: null
-  vessels:
-    - name: null
-      size: null
-      unit: null
-      constant: null
-  kinetic_parameters:
-    - name: null
-      value: null
-      unit: null
-      sbo_term: null
-  kinetic_law:
-    - name: null
-      reaction_reference: null
-      kinetic_model: null

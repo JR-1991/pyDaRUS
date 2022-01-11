@@ -1,58 +1,7 @@
 {
   "EngMeta": {
     "data_generation": null,
-    "flows": [
-      {
-        "name": null,
-        "components": null,
-        "shape": null,
-        "size": null,
-        "position": null
-      }
-    ],
-    "measured_variables": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "error": null,
-        "error_description": null,
-        "minimum_value": null,
-        "maximum_value": null,
-        "textual_value": null
-      }
-    ],
-    "boundary_conditions": [
-      {
-        "flows": null,
-        "parameters": null
-      }
-    ],
-    "system_or_phase_components": [
-      {
-        "id": null,
-        "name": null,
-        "description": null,
-        "inchicode": null,
-        "smilescode": null,
-        "iupac_name": null,
-        "quantity": null,
-        "unit": null,
-        "force_field": null
-      }
-    ],
-    "controlled_variables": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null,
-        "minimum_value": null,
-        "maximum_value": null,
-        "textual_value": null
-      }
-    ],
-    "force_field_parameters": [
+    "boundary_parameters": [
       {
         "name": null,
         "symbol": null,
@@ -60,13 +9,22 @@
         "value": null
       }
     ],
-    "system_parameters": [
+    "system_phases": [
       {
         "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null,
-        "textual_value": null
+        "components": null
+      }
+    ],
+    "force_field": [
+      {
+        "name": null,
+        "parameters": null
+      }
+    ],
+    "boundary_conditions": [
+      {
+        "flows": null,
+        "parameters": null
       }
     ],
     "spatial_resolution": [
@@ -83,14 +41,6 @@
         "scaling_formular": null
       }
     ],
-    "boundary_parameters": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null
-      }
-    ],
     "temporal_resolution": [
       {
         "points": null,
@@ -99,16 +49,66 @@
         "unit": null
       }
     ],
-    "force_field": [
+    "measured_variables": [
       {
         "name": null,
-        "parameters": null
+        "symbol": null,
+        "unit": null,
+        "error": null,
+        "error_description": null,
+        "minimum_value": null,
+        "maximum_value": null,
+        "textual_value": null
       }
     ],
-    "system_phases": [
+    "system_or_phase_components": [
+      {
+        "id": null,
+        "name": null,
+        "description": null,
+        "inchicode": null,
+        "smilescode": null,
+        "iupac_name": null,
+        "quantity": null,
+        "unit": null,
+        "force_field": null
+      }
+    ],
+    "force_field_parameters": [
       {
         "name": null,
-        "components": null
+        "symbol": null,
+        "unit": null,
+        "value": null
+      }
+    ],
+    "controlled_variables": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null,
+        "minimum_value": null,
+        "maximum_value": null,
+        "textual_value": null
+      }
+    ],
+    "system_parameters": [
+      {
+        "name": null,
+        "symbol": null,
+        "unit": null,
+        "value": null,
+        "textual_value": null
+      }
+    ],
+    "flows": [
+      {
+        "name": null,
+        "components": null,
+        "shape": null,
+        "size": null,
+        "position": null
       }
     ]
   }

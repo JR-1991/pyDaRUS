@@ -4,6 +4,26 @@
   "title": "codeMeta",
   "type": "object",
   "properties": {
+    "software_suggestions": {
+      "typeName": "codeMetaSoftwareSuggestions",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Optional dependencies , e.g. for optional features, code development, etc.",
+      "items": {
+        "$ref": "#/definitions/software_suggestions"
+      }
+    },
+    "software_requirements": {
+      "typeName": "codeMetaSoftwareRequirements",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Required software dependencies",
+      "items": {
+        "$ref": "#/definitions/software_requirements"
+      }
+    },
     "software_version": {
       "typeName": "codeMetaSoftwareVersion",
       "typeClass": "primitive",
@@ -139,26 +159,6 @@
       "multiple": false,
       "type": "string",
       "description": "Link to software bug reporting or issue tracking system"
-    },
-    "software_suggestions": {
-      "typeName": "codeMetaSoftwareSuggestions",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Optional dependencies , e.g. for optional features, code development, etc.",
-      "items": {
-        "$ref": "#/definitions/software_suggestions"
-      }
-    },
-    "software_requirements": {
-      "typeName": "codeMetaSoftwareRequirements",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Required software dependencies",
-      "items": {
-        "$ref": "#/definitions/software_requirements"
-      }
     },
     "_metadatablock_name": {
       "default": "codeMeta",

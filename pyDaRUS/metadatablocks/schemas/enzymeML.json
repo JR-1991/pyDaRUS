@@ -4,6 +4,16 @@
   "title": "enzymeML",
   "type": "object",
   "properties": {
+    "kinetic_law": {
+      "typeName": "enzymeMLKineticLaw",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describes the kinetic law that has been used to model the reaction kinetics. It includes the conventional as well as the mathematic equation.",
+      "items": {
+        "$ref": "#/definitions/kinetic_law"
+      }
+    },
     "reactants": {
       "typeName": "enzymeMLReactant",
       "type": "array",
@@ -24,14 +34,14 @@
         "$ref": "#/definitions/proteins"
       }
     },
-    "reactions": {
-      "typeName": "enzymeMLReaction",
+    "kinetic_parameters": {
+      "typeName": "enzymeMLKineticParameter",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "This field describes the reactions that have been executed in the course of the experiment. Here, every defined reactants/proteins will be combined towards a meaningful biochemical reaction equation.",
+      "description": "This field describe the kinetic parameters that have been estimated using the given kinetic law.",
       "items": {
-        "$ref": "#/definitions/reactions"
+        "$ref": "#/definitions/kinetic_parameters"
       }
     },
     "vessels": {
@@ -44,24 +54,14 @@
         "$ref": "#/definitions/vessels"
       }
     },
-    "kinetic_parameters": {
-      "typeName": "enzymeMLKineticParameter",
+    "reactions": {
+      "typeName": "enzymeMLReaction",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "This field describe the kinetic parameters that have been estimated using the given kinetic law.",
+      "description": "This field describes the reactions that have been executed in the course of the experiment. Here, every defined reactants/proteins will be combined towards a meaningful biochemical reaction equation.",
       "items": {
-        "$ref": "#/definitions/kinetic_parameters"
-      }
-    },
-    "kinetic_law": {
-      "typeName": "enzymeMLKineticLaw",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describes the kinetic law that has been used to model the reaction kinetics. It includes the conventional as well as the mathematic equation.",
-      "items": {
-        "$ref": "#/definitions/kinetic_law"
+        "$ref": "#/definitions/reactions"
       }
     },
     "_metadatablock_name": {
@@ -70,6 +70,31 @@
     }
   },
   "definitions": {
+    "kinetic_law": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLKineticLawName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional name of the kinetic law that has been used. For instance 'Reversible Michaelis-Menten'."
+        },
+        "reaction_reference": {
+          "typeName": "enzymeMLKineticLawReaction",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the reaction that has beeen modeled by the given kinetic law."
+        },
+        "kinetic_model": {
+          "typeName": "enzymeMLKineticLawEquation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the mathematical equation of the given kinetic law. For variables that reference entities that are part of this EnzymeML document, please use the given identifier. Parameters will be defined in another field and are referenced by their conventional names. For instance, the following equation denotes a valid kinetic model  'vmax  * s1 / ( km + s1 )'."
+        }
+      }
+    },
     "reactants": {
       "properties": {
         "identifier": {
@@ -239,6 +264,79 @@
         }
       }
     },
+    "kinetic_parameters": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLKineticParameterName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional name of the kinetic paramter that has been estimated. For instance, 'vmax' is a valid name for a parameter. Please note, that for unique identification the SBO Term should be included."
+        },
+        "value": {
+          "typeName": "enzymeMLKineticParameterValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Specifies the numerical value of the estimated kinetic parameter."
+        },
+        "unit": {
+          "typeName": "enzymeMLKineticParameterUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the SI unit of the estimated kinetic parameter."
+        },
+        "sbo_term": {
+          "typeName": "enzymeMLKineticParameterSBOTerm",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the ID of the System Biology Ontology from branch 'systems description parameter' to define a kinetic parameter (e.g. SBO:0000545)"
+        }
+      }
+    },
+    "vessels": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLVesselName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the exact production name of the vessel shoudl be given here (e.g. Eppendorf Tube)"
+        },
+        "size": {
+          "typeName": "enzymeMLVesselSize",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Specifies the volume value of the given vessel (e.g. '1')"
+        },
+        "unit": {
+          "typeName": "enzymeMLVesselUnits",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the SI unit corresponding to the given vessel size value (e.g. 'mL')",
+          "enum": [
+            "ul",
+            "ml",
+            "l"
+          ]
+        },
+        "constant": {
+          "typeName": "enzymeMLVesselConstant",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies if the volume is constant or not. In some instances substances are added over the course of an experiment, where this field should be selected as 'Not constant'.",
+          "enum": [
+            "Constant",
+            "Not constant"
+          ]
+        }
+      }
+    },
     "reactions": {
       "properties": {
         "name": {
@@ -302,112 +400,14 @@
           "description": "Specifies the reaction equation by separating educts and products via '->', while denoting multiple educts/products with a plusign and stoichiometries by 'Y Molecule'. For instance the following describes an alcohol dehydrogenation '1 Ethanol + 1 NAD+ -> 1 Acetaldehyde + 1 NADH + 1 H+'. "
         }
       }
-    },
-    "vessels": {
-      "properties": {
-        "name": {
-          "typeName": "enzymeMLVesselName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the exact production name of the vessel shoudl be given here (e.g. Eppendorf Tube)"
-        },
-        "size": {
-          "typeName": "enzymeMLVesselSize",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Specifies the volume value of the given vessel (e.g. '1')"
-        },
-        "unit": {
-          "typeName": "enzymeMLVesselUnits",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the SI unit corresponding to the given vessel size value (e.g. 'mL')",
-          "enum": [
-            "ul",
-            "ml",
-            "l"
-          ]
-        },
-        "constant": {
-          "typeName": "enzymeMLVesselConstant",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies if the volume is constant or not. In some instances substances are added over the course of an experiment, where this field should be selected as 'Not constant'.",
-          "enum": [
-            "Constant",
-            "Not constant"
-          ]
-        }
-      }
-    },
-    "kinetic_parameters": {
-      "properties": {
-        "name": {
-          "typeName": "enzymeMLKineticParameterName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional name of the kinetic paramter that has been estimated. For instance, 'vmax' is a valid name for a parameter. Please note, that for unique identification the SBO Term should be included."
-        },
-        "value": {
-          "typeName": "enzymeMLKineticParameterValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Specifies the numerical value of the estimated kinetic parameter."
-        },
-        "unit": {
-          "typeName": "enzymeMLKineticParameterUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the SI unit of the estimated kinetic parameter."
-        },
-        "sbo_term": {
-          "typeName": "enzymeMLKineticParameterSBOTerm",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the ID of the System Biology Ontology from branch 'systems description parameter' to define a kinetic parameter (e.g. SBO:0000545)"
-        }
-      }
-    },
-    "kinetic_law": {
-      "properties": {
-        "name": {
-          "typeName": "enzymeMLKineticLawName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional name of the kinetic law that has been used. For instance 'Reversible Michaelis-Menten'."
-        },
-        "reaction_reference": {
-          "typeName": "enzymeMLKineticLawReaction",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the reaction that has beeen modeled by the given kinetic law."
-        },
-        "kinetic_model": {
-          "typeName": "enzymeMLKineticLawEquation",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the mathematical equation of the given kinetic law. For variables that reference entities that are part of this EnzymeML document, please use the given identifier. Parameters will be defined in another field and are referenced by their conventional names. For instance, the following equation denotes a valid kinetic model  'vmax  * s1 / ( km + s1 )'."
-        }
-      }
     }
   },
   "required": [
+    "kinetic_law",
     "reactants",
     "proteins",
-    "reactions",
-    "vessels",
     "kinetic_parameters",
-    "kinetic_law"
+    "vessels",
+    "reactions"
   ]
 }

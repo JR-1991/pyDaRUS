@@ -21,66 +21,66 @@ Citation:
   documentation_and_access_to_sources: null
   did_it_work: null
   explanation: null
-  description:
-    - text: null
-      date: null
+  software:
+    - name: null
+      version: null
+  grant_information:
+    - grant_agency: null
+      grant_number: null
+  author:
+    - name: null
+      affiliation: null
+      identifier_scheme: null
+      identifier: null
   project:
     - name: null
       level: null
+  keyword:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
+  series:
+    - name: null
+      information: null
+  storage:
+    - name: null
+      location: null
+      size: null
   distributor:
     - name: null
       affiliation: null
       abbreviation: null
       url: null
       logo_url: null
+  topic_classification:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
   time_period_covered:
     - start: null
       end: null
-  other_id:
-    - agency: null
-      identifier: null
-  author:
-    - name: null
-      affiliation: null
-      identifier_scheme: null
-      identifier: null
+  description:
+    - text: null
+      date: null
   producer:
     - name: null
       affiliation: null
       abbreviation: null
       url: null
       logo_url: null
-  storage:
-    - name: null
-      location: null
-      size: null
+  other_id:
+    - agency: null
+      identifier: null
+  date_of_collection:
+    - start: null
+      end: null
+  contributor:
+    - type: null
+      name: null
   contact:
     - name: null
       affiliation: null
       email: null
-  software:
-    - name: null
-      version: null
-  keyword:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  contributor:
-    - type: null
-      name: null
-  grant_information:
-    - grant_agency: null
-      grant_number: null
-  series:
-    - name: null
-      information: null
-  topic_classification:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  date_of_collection:
-    - start: null
-      end: null
   related_publication:
     - citation: null
       id_type: null

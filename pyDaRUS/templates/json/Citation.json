@@ -22,16 +22,50 @@
     "documentation_and_access_to_sources": null,
     "did_it_work": null,
     "explanation": null,
-    "description": [
+    "software": [
       {
-        "text": null,
-        "date": null
+        "name": null,
+        "version": null
+      }
+    ],
+    "grant_information": [
+      {
+        "grant_agency": null,
+        "grant_number": null
+      }
+    ],
+    "author": [
+      {
+        "name": null,
+        "affiliation": null,
+        "identifier_scheme": null,
+        "identifier": null
       }
     ],
     "project": [
       {
         "name": null,
         "level": null
+      }
+    ],
+    "keyword": [
+      {
+        "term": null,
+        "vocabulary": null,
+        "vocabulary_url": null
+      }
+    ],
+    "series": [
+      {
+        "name": null,
+        "information": null
+      }
+    ],
+    "storage": [
+      {
+        "name": null,
+        "location": null,
+        "size": null
       }
     ],
     "distributor": [
@@ -43,24 +77,23 @@
         "logo_url": null
       }
     ],
+    "topic_classification": [
+      {
+        "term": null,
+        "vocabulary": null,
+        "vocabulary_url": null
+      }
+    ],
     "time_period_covered": [
       {
         "start": null,
         "end": null
       }
     ],
-    "other_id": [
+    "description": [
       {
-        "agency": null,
-        "identifier": null
-      }
-    ],
-    "author": [
-      {
-        "name": null,
-        "affiliation": null,
-        "identifier_scheme": null,
-        "identifier": null
+        "text": null,
+        "date": null
       }
     ],
     "producer": [
@@ -72,31 +105,16 @@
         "logo_url": null
       }
     ],
-    "storage": [
+    "other_id": [
       {
-        "name": null,
-        "location": null,
-        "size": null
+        "agency": null,
+        "identifier": null
       }
     ],
-    "contact": [
+    "date_of_collection": [
       {
-        "name": null,
-        "affiliation": null,
-        "email": null
-      }
-    ],
-    "software": [
-      {
-        "name": null,
-        "version": null
-      }
-    ],
-    "keyword": [
-      {
-        "term": null,
-        "vocabulary": null,
-        "vocabulary_url": null
+        "start": null,
+        "end": null
       }
     ],
     "contributor": [
@@ -105,29 +123,11 @@
         "name": null
       }
     ],
-    "grant_information": [
-      {
-        "grant_agency": null,
-        "grant_number": null
-      }
-    ],
-    "series": [
+    "contact": [
       {
         "name": null,
-        "information": null
-      }
-    ],
-    "topic_classification": [
-      {
-        "term": null,
-        "vocabulary": null,
-        "vocabulary_url": null
-      }
-    ],
-    "date_of_collection": [
-      {
-        "start": null,
-        "end": null
+        "affiliation": null,
+        "email": null
       }
     ],
     "related_publication": [
