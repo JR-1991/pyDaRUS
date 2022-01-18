@@ -1,18 +1,4 @@
 EnzymeMl:
-  kinetic_law:
-    - name: null
-      reaction_reference: null
-      kinetic_model: null
-  reactants:
-    - identifier: null
-      name: null
-      vessel_reference: null
-      initial_concentration: null
-      unit: null
-      constant: null
-      inchicode: null
-      smilescode: null
-      sbo_term: null
   proteins:
     - identifier: null
       name: null
@@ -30,11 +16,16 @@ EnzymeMl:
       value: null
       unit: null
       sbo_term: null
-  vessels:
-    - name: null
-      size: null
+  reactants:
+    - identifier: null
+      name: null
+      vessel_reference: null
+      initial_concentration: null
       unit: null
       constant: null
+      inchicode: null
+      smilescode: null
+      sbo_term: null
   reactions:
     - name: null
       temperature_value: null
@@ -44,3 +35,12 @@ EnzymeMl:
       products: null
       modifiers: null
       equation: null
+  vessels:
+    - name: null
+      size: null
+      unit: null
+      constant: null
+  kinetic_law:
+    - name: null
+      reaction_reference: null
+      kinetic_model: null

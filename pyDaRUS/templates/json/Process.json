@@ -1,21 +1,5 @@
 {
   "Process": {
-    "method_parameters": [
-      {
-        "name": null,
-        "symbol": null,
-        "unit": null,
-        "value": null,
-        "textual_value": null
-      }
-    ],
-    "processing_methods": [
-      {
-        "name": null,
-        "description": null,
-        "parameters": null
-      }
-    ],
     "software": [
       {
         "name": null,
@@ -27,6 +11,14 @@
         "license": null
       }
     ],
+    "environments": [
+      {
+        "name": null,
+        "compiler_names_and_flags": null,
+        "number_of_nodes": null,
+        "ppn": null
+      }
+    ],
     "instruments": [
       {
         "name": null,
@@ -36,6 +28,13 @@
         "serial_number": null,
         "software": null,
         "location": null
+      }
+    ],
+    "processing_methods": [
+      {
+        "name": null,
+        "description": null,
+        "parameters": null
       }
     ],
     "processing_steps": [
@@ -52,12 +51,13 @@
         "output": null
       }
     ],
-    "environments": [
+    "method_parameters": [
       {
         "name": null,
-        "compiler_names_and_flags": null,
-        "number_of_nodes": null,
-        "ppn": null
+        "symbol": null,
+        "unit": null,
+        "value": null,
+        "textual_value": null
       }
     ]
   }

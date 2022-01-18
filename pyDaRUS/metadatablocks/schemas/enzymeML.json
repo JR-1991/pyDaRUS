@@ -4,26 +4,6 @@
   "title": "enzymeML",
   "type": "object",
   "properties": {
-    "kinetic_law": {
-      "typeName": "enzymeMLKineticLaw",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describes the kinetic law that has been used to model the reaction kinetics. It includes the conventional as well as the mathematic equation.",
-      "items": {
-        "$ref": "#/definitions/kinetic_law"
-      }
-    },
-    "reactants": {
-      "typeName": "enzymeMLReactant",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describes the reactants that have been used in the course of the experiment. This should be small molecules exclusively such as NADH, pyruvate or any other molecule that is not a protein.",
-      "items": {
-        "$ref": "#/definitions/reactants"
-      }
-    },
     "proteins": {
       "typeName": "enzymeMLProtein",
       "type": "array",
@@ -44,14 +24,14 @@
         "$ref": "#/definitions/kinetic_parameters"
       }
     },
-    "vessels": {
-      "typeName": "enzymeMLVessel",
+    "reactants": {
+      "typeName": "enzymeMLReactant",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "This field describes which vessels have been used to carry out the experiment. For example an 'Eppendorf tube' of size 1mL that held a constant volume.",
+      "description": "This field describes the reactants that have been used in the course of the experiment. This should be small molecules exclusively such as NADH, pyruvate or any other molecule that is not a protein.",
       "items": {
-        "$ref": "#/definitions/vessels"
+        "$ref": "#/definitions/reactants"
       }
     },
     "reactions": {
@@ -64,114 +44,32 @@
         "$ref": "#/definitions/reactions"
       }
     },
+    "vessels": {
+      "typeName": "enzymeMLVessel",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describes which vessels have been used to carry out the experiment. For example an 'Eppendorf tube' of size 1mL that held a constant volume.",
+      "items": {
+        "$ref": "#/definitions/vessels"
+      }
+    },
+    "kinetic_law": {
+      "typeName": "enzymeMLKineticLaw",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describes the kinetic law that has been used to model the reaction kinetics. It includes the conventional as well as the mathematic equation.",
+      "items": {
+        "$ref": "#/definitions/kinetic_law"
+      }
+    },
     "_metadatablock_name": {
       "default": "enzymeML",
       "type": "string"
     }
   },
   "definitions": {
-    "kinetic_law": {
-      "properties": {
-        "name": {
-          "typeName": "enzymeMLKineticLawName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional name of the kinetic law that has been used. For instance 'Reversible Michaelis-Menten'."
-        },
-        "reaction_reference": {
-          "typeName": "enzymeMLKineticLawReaction",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the reaction that has beeen modeled by the given kinetic law."
-        },
-        "kinetic_model": {
-          "typeName": "enzymeMLKineticLawEquation",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the mathematical equation of the given kinetic law. For variables that reference entities that are part of this EnzymeML document, please use the given identifier. Parameters will be defined in another field and are referenced by their conventional names. For instance, the following equation denotes a valid kinetic model  'vmax  * s1 / ( km + s1 )'."
-        }
-      }
-    },
-    "reactants": {
-      "properties": {
-        "identifier": {
-          "typeName": "enzymeMLReactantID",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the internal identifier of the reactant. Please follow the convention of denote a reactant entity by an 's' followed by an integer. For instance, 's1' is a valid ID."
-        },
-        "name": {
-          "typeName": "enzymeMLReactantName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional or systematic name of the given reactant. Please note that this field on purpose can not be unique since molecule names vary in between fields. Please use either the InChI or SMILES code for a unique identification."
-        },
-        "vessel_reference": {
-          "typeName": "enzymeMLReactantVessel",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the vessel in which the reactant was given. If the reactant was part of multiple reactions carried out in different vessel, please separated these via semicolon ';'."
-        },
-        "initial_concentration": {
-          "typeName": "enzymeMLReactantInitialConcentration",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Specifies the initial concentration value at the beginning of the experiment."
-        },
-        "unit": {
-          "typeName": "enzymeMLReactantSubstanceUnits",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the corresponding SI unit to the initial concentration value.",
-          "enum": [
-            "nM",
-            "uM",
-            "mM",
-            "M"
-          ]
-        },
-        "constant": {
-          "typeName": "enzymeMLReactantConstant",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies if the reactants concentation was constant or not. If a reactant serves as a substrate/product, concentrations are likely to change and this field should be set to 'Not constant'.",
-          "enum": [
-            "Constant",
-            "Not constant"
-          ]
-        },
-        "inchicode": {
-          "typeName": "enzymeMLReactantInchi",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the IUPAC International Chemical Identifier, which is a unique identifier for a molecule"
-        },
-        "smilescode": {
-          "typeName": "enzymeMLReactantSmiles",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the Simplified Molecular Input Line Entry Specification, which is a unique identifier for a molecule"
-        },
-        "sbo_term": {
-          "typeName": "enzymeMLReactantSBOTerm",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the ID of the System Biology Ontology from branch 'material entity' to define a reactants role (e.g. SBO:0000240)"
-        }
-      }
-    },
     "proteins": {
       "properties": {
         "identifier": {
@@ -296,44 +194,80 @@
         }
       }
     },
-    "vessels": {
+    "reactants": {
       "properties": {
-        "name": {
-          "typeName": "enzymeMLVesselName",
+        "identifier": {
+          "typeName": "enzymeMLReactantID",
           "typeClass": "primitive",
           "multiple": false,
           "type": "string",
-          "description": "Specifies the exact production name of the vessel shoudl be given here (e.g. Eppendorf Tube)"
+          "description": "Specifies the internal identifier of the reactant. Please follow the convention of denote a reactant entity by an 's' followed by an integer. For instance, 's1' is a valid ID."
         },
-        "size": {
-          "typeName": "enzymeMLVesselSize",
+        "name": {
+          "typeName": "enzymeMLReactantName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional or systematic name of the given reactant. Please note that this field on purpose can not be unique since molecule names vary in between fields. Please use either the InChI or SMILES code for a unique identification."
+        },
+        "vessel_reference": {
+          "typeName": "enzymeMLReactantVessel",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the vessel in which the reactant was given. If the reactant was part of multiple reactions carried out in different vessel, please separated these via semicolon ';'."
+        },
+        "initial_concentration": {
+          "typeName": "enzymeMLReactantInitialConcentration",
           "typeClass": "primitive",
           "multiple": false,
           "type": "number",
-          "description": "Specifies the volume value of the given vessel (e.g. '1')"
+          "description": "Specifies the initial concentration value at the beginning of the experiment."
         },
         "unit": {
-          "typeName": "enzymeMLVesselUnits",
+          "typeName": "enzymeMLReactantSubstanceUnits",
           "typeClass": "controlledVocabulary",
           "multiple": false,
           "type": "string",
-          "description": "Specifies the SI unit corresponding to the given vessel size value (e.g. 'mL')",
+          "description": "Specifies the corresponding SI unit to the initial concentration value.",
           "enum": [
-            "ul",
-            "ml",
-            "l"
+            "nM",
+            "uM",
+            "mM",
+            "M"
           ]
         },
         "constant": {
-          "typeName": "enzymeMLVesselConstant",
+          "typeName": "enzymeMLReactantConstant",
           "typeClass": "controlledVocabulary",
           "multiple": false,
           "type": "string",
-          "description": "Specifies if the volume is constant or not. In some instances substances are added over the course of an experiment, where this field should be selected as 'Not constant'.",
+          "description": "Specifies if the reactants concentation was constant or not. If a reactant serves as a substrate/product, concentrations are likely to change and this field should be set to 'Not constant'.",
           "enum": [
             "Constant",
             "Not constant"
           ]
+        },
+        "inchicode": {
+          "typeName": "enzymeMLReactantInchi",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the IUPAC International Chemical Identifier, which is a unique identifier for a molecule"
+        },
+        "smilescode": {
+          "typeName": "enzymeMLReactantSmiles",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the Simplified Molecular Input Line Entry Specification, which is a unique identifier for a molecule"
+        },
+        "sbo_term": {
+          "typeName": "enzymeMLReactantSBOTerm",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the ID of the System Biology Ontology from branch 'material entity' to define a reactants role (e.g. SBO:0000240)"
         }
       }
     },
@@ -400,14 +334,80 @@
           "description": "Specifies the reaction equation by separating educts and products via '->', while denoting multiple educts/products with a plusign and stoichiometries by 'Y Molecule'. For instance the following describes an alcohol dehydrogenation '1 Ethanol + 1 NAD+ -> 1 Acetaldehyde + 1 NADH + 1 H+'. "
         }
       }
+    },
+    "vessels": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLVesselName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the exact production name of the vessel shoudl be given here (e.g. Eppendorf Tube)"
+        },
+        "size": {
+          "typeName": "enzymeMLVesselSize",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Specifies the volume value of the given vessel (e.g. '1')"
+        },
+        "unit": {
+          "typeName": "enzymeMLVesselUnits",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the SI unit corresponding to the given vessel size value (e.g. 'mL')",
+          "enum": [
+            "ul",
+            "ml",
+            "l"
+          ]
+        },
+        "constant": {
+          "typeName": "enzymeMLVesselConstant",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies if the volume is constant or not. In some instances substances are added over the course of an experiment, where this field should be selected as 'Not constant'.",
+          "enum": [
+            "Constant",
+            "Not constant"
+          ]
+        }
+      }
+    },
+    "kinetic_law": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLKineticLawName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional name of the kinetic law that has been used. For instance 'Reversible Michaelis-Menten'."
+        },
+        "reaction_reference": {
+          "typeName": "enzymeMLKineticLawReaction",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the reaction that has beeen modeled by the given kinetic law."
+        },
+        "kinetic_model": {
+          "typeName": "enzymeMLKineticLawEquation",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the mathematical equation of the given kinetic law. For variables that reference entities that are part of this EnzymeML document, please use the given identifier. Parameters will be defined in another field and are referenced by their conventional names. For instance, the following equation denotes a valid kinetic model  'vmax  * s1 / ( km + s1 )'."
+        }
+      }
     }
   },
   "required": [
-    "kinetic_law",
-    "reactants",
     "proteins",
     "kinetic_parameters",
+    "reactants",
+    "reactions",
     "vessels",
-    "reactions"
+    "kinetic_law"
   ]
 }
