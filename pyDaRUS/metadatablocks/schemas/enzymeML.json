@@ -14,26 +14,6 @@
         "$ref": "#/definitions/proteins"
       }
     },
-    "kinetic_parameters": {
-      "typeName": "enzymeMLKineticParameter",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describe the kinetic parameters that have been estimated using the given kinetic law.",
-      "items": {
-        "$ref": "#/definitions/kinetic_parameters"
-      }
-    },
-    "reactants": {
-      "typeName": "enzymeMLReactant",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "This field describes the reactants that have been used in the course of the experiment. This should be small molecules exclusively such as NADH, pyruvate or any other molecule that is not a protein.",
-      "items": {
-        "$ref": "#/definitions/reactants"
-      }
-    },
     "reactions": {
       "typeName": "enzymeMLReaction",
       "type": "array",
@@ -62,6 +42,26 @@
       "description": "This field describes the kinetic law that has been used to model the reaction kinetics. It includes the conventional as well as the mathematic equation.",
       "items": {
         "$ref": "#/definitions/kinetic_law"
+      }
+    },
+    "kinetic_parameters": {
+      "typeName": "enzymeMLKineticParameter",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describe the kinetic parameters that have been estimated using the given kinetic law.",
+      "items": {
+        "$ref": "#/definitions/kinetic_parameters"
+      }
+    },
+    "reactants": {
+      "typeName": "enzymeMLReactant",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "This field describes the reactants that have been used in the course of the experiment. This should be small molecules exclusively such as NADH, pyruvate or any other molecule that is not a protein.",
+      "items": {
+        "$ref": "#/definitions/reactants"
       }
     },
     "_metadatablock_name": {
@@ -159,115 +159,6 @@
           "multiple": false,
           "type": "string",
           "description": "Specifies the ID of the System Biology Ontology from branch 'material entity' to define a proteins role (e.g. SBO:0000240)"
-        }
-      }
-    },
-    "kinetic_parameters": {
-      "properties": {
-        "name": {
-          "typeName": "enzymeMLKineticParameterName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional name of the kinetic paramter that has been estimated. For instance, 'vmax' is a valid name for a parameter. Please note, that for unique identification the SBO Term should be included."
-        },
-        "value": {
-          "typeName": "enzymeMLKineticParameterValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Specifies the numerical value of the estimated kinetic parameter."
-        },
-        "unit": {
-          "typeName": "enzymeMLKineticParameterUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the SI unit of the estimated kinetic parameter."
-        },
-        "sbo_term": {
-          "typeName": "enzymeMLKineticParameterSBOTerm",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the ID of the System Biology Ontology from branch 'systems description parameter' to define a kinetic parameter (e.g. SBO:0000545)"
-        }
-      }
-    },
-    "reactants": {
-      "properties": {
-        "identifier": {
-          "typeName": "enzymeMLReactantID",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the internal identifier of the reactant. Please follow the convention of denote a reactant entity by an 's' followed by an integer. For instance, 's1' is a valid ID."
-        },
-        "name": {
-          "typeName": "enzymeMLReactantName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the conventional or systematic name of the given reactant. Please note that this field on purpose can not be unique since molecule names vary in between fields. Please use either the InChI or SMILES code for a unique identification."
-        },
-        "vessel_reference": {
-          "typeName": "enzymeMLReactantVessel",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the vessel in which the reactant was given. If the reactant was part of multiple reactions carried out in different vessel, please separated these via semicolon ';'."
-        },
-        "initial_concentration": {
-          "typeName": "enzymeMLReactantInitialConcentration",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Specifies the initial concentration value at the beginning of the experiment."
-        },
-        "unit": {
-          "typeName": "enzymeMLReactantSubstanceUnits",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the corresponding SI unit to the initial concentration value.",
-          "enum": [
-            "nM",
-            "uM",
-            "mM",
-            "M"
-          ]
-        },
-        "constant": {
-          "typeName": "enzymeMLReactantConstant",
-          "typeClass": "controlledVocabulary",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies if the reactants concentation was constant or not. If a reactant serves as a substrate/product, concentrations are likely to change and this field should be set to 'Not constant'.",
-          "enum": [
-            "Constant",
-            "Not constant"
-          ]
-        },
-        "inchicode": {
-          "typeName": "enzymeMLReactantInchi",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the IUPAC International Chemical Identifier, which is a unique identifier for a molecule"
-        },
-        "smilescode": {
-          "typeName": "enzymeMLReactantSmiles",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the Simplified Molecular Input Line Entry Specification, which is a unique identifier for a molecule"
-        },
-        "sbo_term": {
-          "typeName": "enzymeMLReactantSBOTerm",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Specifies the ID of the System Biology Ontology from branch 'material entity' to define a reactants role (e.g. SBO:0000240)"
         }
       }
     },
@@ -400,14 +291,123 @@
           "description": "Specifies the mathematical equation of the given kinetic law. For variables that reference entities that are part of this EnzymeML document, please use the given identifier. Parameters will be defined in another field and are referenced by their conventional names. For instance, the following equation denotes a valid kinetic model  'vmax  * s1 / ( km + s1 )'."
         }
       }
+    },
+    "kinetic_parameters": {
+      "properties": {
+        "name": {
+          "typeName": "enzymeMLKineticParameterName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional name of the kinetic paramter that has been estimated. For instance, 'vmax' is a valid name for a parameter. Please note, that for unique identification the SBO Term should be included."
+        },
+        "value": {
+          "typeName": "enzymeMLKineticParameterValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Specifies the numerical value of the estimated kinetic parameter."
+        },
+        "unit": {
+          "typeName": "enzymeMLKineticParameterUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the SI unit of the estimated kinetic parameter."
+        },
+        "sbo_term": {
+          "typeName": "enzymeMLKineticParameterSBOTerm",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the ID of the System Biology Ontology from branch 'systems description parameter' to define a kinetic parameter (e.g. SBO:0000545)"
+        }
+      }
+    },
+    "reactants": {
+      "properties": {
+        "identifier": {
+          "typeName": "enzymeMLReactantID",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the internal identifier of the reactant. Please follow the convention of denote a reactant entity by an 's' followed by an integer. For instance, 's1' is a valid ID."
+        },
+        "name": {
+          "typeName": "enzymeMLReactantName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the conventional or systematic name of the given reactant. Please note that this field on purpose can not be unique since molecule names vary in between fields. Please use either the InChI or SMILES code for a unique identification."
+        },
+        "vessel_reference": {
+          "typeName": "enzymeMLReactantVessel",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the vessel in which the reactant was given. If the reactant was part of multiple reactions carried out in different vessel, please separated these via semicolon ';'."
+        },
+        "initial_concentration": {
+          "typeName": "enzymeMLReactantInitialConcentration",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Specifies the initial concentration value at the beginning of the experiment."
+        },
+        "unit": {
+          "typeName": "enzymeMLReactantSubstanceUnits",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the corresponding SI unit to the initial concentration value.",
+          "enum": [
+            "nM",
+            "uM",
+            "mM",
+            "M"
+          ]
+        },
+        "constant": {
+          "typeName": "enzymeMLReactantConstant",
+          "typeClass": "controlledVocabulary",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies if the reactants concentation was constant or not. If a reactant serves as a substrate/product, concentrations are likely to change and this field should be set to 'Not constant'.",
+          "enum": [
+            "Constant",
+            "Not constant"
+          ]
+        },
+        "inchicode": {
+          "typeName": "enzymeMLReactantInchi",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the IUPAC International Chemical Identifier, which is a unique identifier for a molecule"
+        },
+        "smilescode": {
+          "typeName": "enzymeMLReactantSmiles",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the Simplified Molecular Input Line Entry Specification, which is a unique identifier for a molecule"
+        },
+        "sbo_term": {
+          "typeName": "enzymeMLReactantSBOTerm",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Specifies the ID of the System Biology Ontology from branch 'material entity' to define a reactants role (e.g. SBO:0000240)"
+        }
+      }
     }
   },
   "required": [
     "proteins",
-    "kinetic_parameters",
-    "reactants",
     "reactions",
     "vessels",
-    "kinetic_law"
+    "kinetic_law",
+    "kinetic_parameters",
+    "reactants"
   ]
 }

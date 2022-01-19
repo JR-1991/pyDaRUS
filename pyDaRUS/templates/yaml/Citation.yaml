@@ -21,68 +21,68 @@ Citation:
   documentation_and_access_to_sources: null
   did_it_work: null
   explanation: null
-  related_publication:
-    - citation: null
-      id_type: null
-      id_number: null
-      url: null
-  series:
+  software:
     - name: null
-      information: null
-  project:
-    - name: null
-      level: null
-  contact:
-    - name: null
-      affiliation: null
-      email: null
+      version: null
   producer:
     - name: null
       affiliation: null
       abbreviation: null
       url: null
       logo_url: null
+  contributor:
+    - type: null
+      name: null
+  author:
+    - name: null
+      affiliation: null
+      identifier_scheme: null
+      identifier: null
+  series:
+    - name: null
+      information: null
+  contact:
+    - name: null
+      affiliation: null
+      email: null
   distributor:
     - name: null
       affiliation: null
       abbreviation: null
       url: null
       logo_url: null
-  date_of_collection:
-    - start: null
-      end: null
-  software:
+  keyword:
+    - term: null
+      vocabulary: null
+      vocabulary_url: null
+  project:
     - name: null
-      version: null
-  author:
-    - name: null
-      affiliation: null
-      identifier_scheme: null
-      identifier: null
-  other_id:
-    - agency: null
-      identifier: null
-  time_period_covered:
-    - start: null
-      end: null
-  storage:
-    - name: null
-      location: null
-      size: null
+      level: null
+  related_publication:
+    - citation: null
+      id_type: null
+      id_number: null
+      url: null
   grant_information:
     - grant_agency: null
       grant_number: null
   description:
     - text: null
       date: null
-  contributor:
-    - type: null
-      name: null
+  date_of_collection:
+    - start: null
+      end: null
+  time_period_covered:
+    - start: null
+      end: null
+  other_id:
+    - agency: null
+      identifier: null
+  storage:
+    - name: null
+      location: null
+      size: null
   topic_classification:
-    - term: null
-      vocabulary: null
-      vocabulary_url: null
-  keyword:
     - term: null
       vocabulary: null
       vocabulary_url: null

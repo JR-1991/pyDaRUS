@@ -11,14 +11,6 @@
         "license": null
       }
     ],
-    "environments": [
-      {
-        "name": null,
-        "compiler_names_and_flags": null,
-        "number_of_nodes": null,
-        "ppn": null
-      }
-    ],
     "instruments": [
       {
         "name": null,
@@ -49,6 +41,14 @@
         "environment": null,
         "input": null,
         "output": null
+      }
+    ],
+    "environments": [
+      {
+        "name": null,
+        "compiler_names_and_flags": null,
+        "number_of_nodes": null,
+        "ppn": null
       }
     ],
     "method_parameters": [

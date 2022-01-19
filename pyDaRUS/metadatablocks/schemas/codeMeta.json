@@ -140,16 +140,6 @@
       "type": "string",
       "description": "Link to software bug reporting or issue tracking system"
     },
-    "software_suggestions": {
-      "typeName": "codeMetaSoftwareSuggestions",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Optional dependencies , e.g. for optional features, code development, etc.",
-      "items": {
-        "$ref": "#/definitions/software_suggestions"
-      }
-    },
     "software_requirements": {
       "typeName": "codeMetaSoftwareRequirements",
       "type": "array",
@@ -160,30 +150,22 @@
         "$ref": "#/definitions/software_requirements"
       }
     },
+    "software_suggestions": {
+      "typeName": "codeMetaSoftwareSuggestions",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Optional dependencies , e.g. for optional features, code development, etc.",
+      "items": {
+        "$ref": "#/definitions/software_suggestions"
+      }
+    },
     "_metadatablock_name": {
       "default": "codeMeta",
       "type": "string"
     }
   },
   "definitions": {
-    "software_suggestions": {
-      "properties": {
-        "name": {
-          "typeName": "codeMetaSoftwareSuggestionsTitle",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name or title of the optional software/library"
-        },
-        "url": {
-          "typeName": "codeMetaSoftwareSuggestionsUrl",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Link to optional software/library"
-        }
-      }
-    },
     "software_requirements": {
       "properties": {
         "name": {
@@ -201,10 +183,28 @@
           "description": "Link to required software/library"
         }
       }
+    },
+    "software_suggestions": {
+      "properties": {
+        "name": {
+          "typeName": "codeMetaSoftwareSuggestionsTitle",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name or title of the optional software/library"
+        },
+        "url": {
+          "typeName": "codeMetaSoftwareSuggestionsUrl",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Link to optional software/library"
+        }
+      }
     }
   },
   "required": [
-    "software_suggestions",
-    "software_requirements"
+    "software_requirements",
+    "software_suggestions"
   ]
 }

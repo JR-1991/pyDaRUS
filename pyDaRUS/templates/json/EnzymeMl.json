@@ -15,27 +15,6 @@
         "sbo_term": null
       }
     ],
-    "kinetic_parameters": [
-      {
-        "name": null,
-        "value": null,
-        "unit": null,
-        "sbo_term": null
-      }
-    ],
-    "reactants": [
-      {
-        "identifier": null,
-        "name": null,
-        "vessel_reference": null,
-        "initial_concentration": null,
-        "unit": null,
-        "constant": null,
-        "inchicode": null,
-        "smilescode": null,
-        "sbo_term": null
-      }
-    ],
     "reactions": [
       {
         "name": null,
@@ -61,6 +40,27 @@
         "name": null,
         "reaction_reference": null,
         "kinetic_model": null
+      }
+    ],
+    "kinetic_parameters": [
+      {
+        "name": null,
+        "value": null,
+        "unit": null,
+        "sbo_term": null
+      }
+    ],
+    "reactants": [
+      {
+        "identifier": null,
+        "name": null,
+        "vessel_reference": null,
+        "initial_concentration": null,
+        "unit": null,
+        "constant": null,
+        "inchicode": null,
+        "smilescode": null,
+        "sbo_term": null
       }
     ]
   }

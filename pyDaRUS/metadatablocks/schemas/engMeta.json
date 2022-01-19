@@ -17,24 +17,14 @@
         "Prediction"
       ]
     },
-    "force_field_parameters": {
-      "typeName": "engMetaForcefieldPar",
+    "spatial_resolution": {
+      "typeName": "engMetaGitter",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Specification of a force field parameter.",
+      "description": "Specification of the spatial grid of the observation.",
       "items": {
-        "$ref": "#/definitions/force_field_parameters"
-      }
-    },
-    "system_or_phase_components": {
-      "typeName": "engMetaComp",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Specification of a component of the object of research / observed system",
-      "items": {
-        "$ref": "#/definitions/system_or_phase_components"
+        "$ref": "#/definitions/spatial_resolution"
       }
     },
     "controlled_variables": {
@@ -47,14 +37,24 @@
         "$ref": "#/definitions/controlled_variables"
       }
     },
-    "system_parameters": {
-      "typeName": "engMetaSystemPar",
+    "measured_variables": {
+      "typeName": "engMetaMeasuredVar",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Parameters of the observed system.",
+      "description": "Specification of captured (measured / simulated / surveyed / dependent) variables.",
       "items": {
-        "$ref": "#/definitions/system_parameters"
+        "$ref": "#/definitions/measured_variables"
+      }
+    },
+    "force_field_parameters": {
+      "typeName": "engMetaForcefieldPar",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Specification of a force field parameter.",
+      "items": {
+        "$ref": "#/definitions/force_field_parameters"
       }
     },
     "temporal_resolution": {
@@ -67,14 +67,14 @@
         "$ref": "#/definitions/temporal_resolution"
       }
     },
-    "boundary_conditions": {
-      "typeName": "engMetaBoundCond",
+    "boundary_parameters": {
+      "typeName": "engMetaBoundCondPar",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Definition of boundaries of the observed system.",
+      "description": "Parameters relevant for boundary conditions.",
       "items": {
-        "$ref": "#/definitions/boundary_conditions"
+        "$ref": "#/definitions/boundary_parameters"
       }
     },
     "force_field": {
@@ -85,6 +85,16 @@
       "description": "Specification of a force field",
       "items": {
         "$ref": "#/definitions/force_field"
+      }
+    },
+    "boundary_conditions": {
+      "typeName": "engMetaBoundCond",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Definition of boundaries of the observed system.",
+      "items": {
+        "$ref": "#/definitions/boundary_conditions"
       }
     },
     "system_phases": {
@@ -107,34 +117,24 @@
         "$ref": "#/definitions/flows"
       }
     },
-    "measured_variables": {
-      "typeName": "engMetaMeasuredVar",
+    "system_or_phase_components": {
+      "typeName": "engMetaComp",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Specification of captured (measured / simulated / surveyed / dependent) variables.",
+      "description": "Specification of a component of the object of research / observed system",
       "items": {
-        "$ref": "#/definitions/measured_variables"
+        "$ref": "#/definitions/system_or_phase_components"
       }
     },
-    "boundary_parameters": {
-      "typeName": "engMetaBoundCondPar",
+    "system_parameters": {
+      "typeName": "engMetaSystemPar",
       "type": "array",
       "typeClass": "compound",
       "multiple": true,
-      "description": "Parameters relevant for boundary conditions.",
+      "description": "Parameters of the observed system.",
       "items": {
-        "$ref": "#/definitions/boundary_parameters"
-      }
-    },
-    "spatial_resolution": {
-      "typeName": "engMetaGitter",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Specification of the spatial grid of the observation.",
-      "items": {
-        "$ref": "#/definitions/spatial_resolution"
+        "$ref": "#/definitions/system_parameters"
       }
     },
     "_metadatablock_name": {
@@ -143,414 +143,6 @@
     }
   },
   "definitions": {
-    "force_field_parameters": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaForcefieldParName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the parameter."
-        },
-        "symbol": {
-          "typeName": "engMetaForcefieldParSymbol",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The symbol used to describe this parameter."
-        },
-        "unit": {
-          "typeName": "engMetaForcefieldParUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The unit or scale of this parameter."
-        },
-        "value": {
-          "typeName": "engMetaForcefieldParValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The value of this parameter."
-        }
-      }
-    },
-    "system_or_phase_components": {
-      "properties": {
-        "id": {
-          "typeName": "engMetaCompId",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "integer",
-          "description": "Unique number that can be referred to in the metadata. Use if Name is not unique."
-        },
-        "name": {
-          "typeName": "engMetaCompName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of this component."
-        },
-        "description": {
-          "typeName": "engMetaCompDescription",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Description of the component."
-        },
-        "inchicode": {
-          "typeName": "engMetaCompInChI",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The IUPAC International Chemical Identifier"
-        },
-        "smilescode": {
-          "typeName": "engMetaCompSmilesCode",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Simplified Molecular Input Line Entry Specification"
-        },
-        "iupac_name": {
-          "typeName": "engMetaCompIUPAC",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Chemical nomenclature created and developed by the International Union of Pure and Applied Chemistry (IUPAC)"
-        },
-        "quantity": {
-          "typeName": "engMetaCompQuantity",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The amount of this component."
-        },
-        "unit": {
-          "typeName": "engMetaCompUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The unit in which the amount is measured."
-        },
-        "force_field": {
-          "typeName": "engMetaCompForcefield",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the force field belonging to this component (detailed information about the force field should be given under Force Field Parameters)."
-        }
-      }
-    },
-    "controlled_variables": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaControlledVarName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of this variable."
-        },
-        "symbol": {
-          "typeName": "engMetaControlledVarSymbol",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The symbol used to describe this variable."
-        },
-        "unit": {
-          "typeName": "engMetaControlledVarUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The unit or scale of this variable."
-        },
-        "value": {
-          "typeName": "engMetaControlledVarValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The (single) value of this variable."
-        },
-        "minimum_value": {
-          "typeName": "engMetaControlledVarValueFrom",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The minimum value of this variable (use for ranges)"
-        },
-        "maximum_value": {
-          "typeName": "engMetaControlledVarValueTo",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The maximum value of this variable  (use for ranges)"
-        },
-        "textual_value": {
-          "typeName": "engMetaControlledVarTextValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The value of this controlled variable (for non numerical values)."
-        }
-      }
-    },
-    "system_parameters": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaSystemParName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the parameter."
-        },
-        "symbol": {
-          "typeName": "engMetaSystemParSymbol",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The symbol used to describe this parameter."
-        },
-        "unit": {
-          "typeName": "engMetaSystemParUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The unit or scale of this parameter."
-        },
-        "value": {
-          "typeName": "engMetaSystemParValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The (numerical) value of this parameter."
-        },
-        "textual_value": {
-          "typeName": "engMetaSystemParTextValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The value of this system parameter (for non numerical values)."
-        }
-      }
-    },
-    "temporal_resolution": {
-      "properties": {
-        "points": {
-          "typeName": "engMetaTempPoints",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of time points that describe the temporal resolution (if it can not be specified otherwise)."
-        },
-        "number_of_time_steps": {
-          "typeName": "engMetaTempCountPoints",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "integer",
-          "description": "The number of time points (with equidistant distance)."
-        },
-        "interval": {
-          "typeName": "engMetaTempInterval",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Distance between two time points."
-        },
-        "unit": {
-          "typeName": "engMetaTempUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The unit of the temporal resolution."
-        }
-      }
-    },
-    "boundary_conditions": {
-      "properties": {
-        "flows": {
-          "typeName": "engMetaBoundCondFlows",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of in- and outflows describing this boundary condition (detailed information about flows should be given under Flows)."
-        },
-        "parameters": {
-          "typeName": "engMetaBoundCondPars",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of all parameter names relevant for this boundary condition (detailed information about parameters should be given under Boundary Parameters."
-        }
-      }
-    },
-    "force_field": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaForcefieldName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the force field."
-        },
-        "parameters": {
-          "typeName": "engMetaForcefieldPars",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of all parameter names relevant for this force field (detailed information about parameters should be given under Force Field Parameters entry)."
-        }
-      }
-    },
-    "system_phases": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaPhaseName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of a phase."
-        },
-        "components": {
-          "typeName": "engMetaPhaseComps",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of all component names for this phase (detailed information about components should be given under System Components)."
-        }
-      }
-    },
-    "flows": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaFlowsName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the flow."
-        },
-        "components": {
-          "typeName": "engMetaFlowsComp",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "List of system component names this flow belongs to."
-        },
-        "shape": {
-          "typeName": "engMetaFlowsShape",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Shape of the flow."
-        },
-        "size": {
-          "typeName": "engMetaFlowsSize",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "Size of the flow."
-        },
-        "position": {
-          "typeName": "engMetaFlowsPosition",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The position of the flow."
-        }
-      }
-    },
-    "measured_variables": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaMeasuredVarName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of this variable."
-        },
-        "symbol": {
-          "typeName": "engMetaMeasuredVarSymbol",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The symbol used to describe this variable."
-        },
-        "unit": {
-          "typeName": "engMetaMeasuredVarUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The unit or scale of this variable."
-        },
-        "error": {
-          "typeName": "engMetaMeasuredVarError",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "A value for the uncertainty of this variable."
-        },
-        "error_description": {
-          "typeName": "engMetaMeasuredVarErrorDesc",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The type the error is measured (e.g. standard deviation, percentage, \u2026)"
-        },
-        "minimum_value": {
-          "typeName": "engMetaMeasuredVarValueFrom",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The minimum value of this variable (use for ranges)"
-        },
-        "maximum_value": {
-          "typeName": "engMetaMeasuredVarValueTo",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The maximum value of this variable (use for ranges)"
-        },
-        "textual_value": {
-          "typeName": "engMetaMeasuredVarTextValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The value of this measured variable (for non numerical values)."
-        }
-      }
-    },
-    "boundary_parameters": {
-      "properties": {
-        "name": {
-          "typeName": "engMetaBoundCondParName",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name of the parameter."
-        },
-        "symbol": {
-          "typeName": "engMetaBoundCondParSymbol",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The symbol used to describe this parameter."
-        },
-        "unit": {
-          "typeName": "engMetaBoundCondParUnit",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "The unit or scale of this parameter."
-        },
-        "value": {
-          "typeName": "engMetaBoundCondParValue",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "number",
-          "description": "The value of this parameter."
-        }
-      }
-    },
     "spatial_resolution": {
       "properties": {
         "number_of_cells": {
@@ -624,20 +216,428 @@
           "description": "If the grid is not equidistant, the distance between points can be specified via a formular."
         }
       }
+    },
+    "controlled_variables": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaControlledVarName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of this variable."
+        },
+        "symbol": {
+          "typeName": "engMetaControlledVarSymbol",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The symbol used to describe this variable."
+        },
+        "unit": {
+          "typeName": "engMetaControlledVarUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit or scale of this variable."
+        },
+        "value": {
+          "typeName": "engMetaControlledVarValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The (single) value of this variable."
+        },
+        "minimum_value": {
+          "typeName": "engMetaControlledVarValueFrom",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The minimum value of this variable (use for ranges)"
+        },
+        "maximum_value": {
+          "typeName": "engMetaControlledVarValueTo",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The maximum value of this variable  (use for ranges)"
+        },
+        "textual_value": {
+          "typeName": "engMetaControlledVarTextValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The value of this controlled variable (for non numerical values)."
+        }
+      }
+    },
+    "measured_variables": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaMeasuredVarName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of this variable."
+        },
+        "symbol": {
+          "typeName": "engMetaMeasuredVarSymbol",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The symbol used to describe this variable."
+        },
+        "unit": {
+          "typeName": "engMetaMeasuredVarUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit or scale of this variable."
+        },
+        "error": {
+          "typeName": "engMetaMeasuredVarError",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "A value for the uncertainty of this variable."
+        },
+        "error_description": {
+          "typeName": "engMetaMeasuredVarErrorDesc",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The type the error is measured (e.g. standard deviation, percentage, \u2026)"
+        },
+        "minimum_value": {
+          "typeName": "engMetaMeasuredVarValueFrom",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The minimum value of this variable (use for ranges)"
+        },
+        "maximum_value": {
+          "typeName": "engMetaMeasuredVarValueTo",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The maximum value of this variable (use for ranges)"
+        },
+        "textual_value": {
+          "typeName": "engMetaMeasuredVarTextValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The value of this measured variable (for non numerical values)."
+        }
+      }
+    },
+    "force_field_parameters": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaForcefieldParName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the parameter."
+        },
+        "symbol": {
+          "typeName": "engMetaForcefieldParSymbol",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The symbol used to describe this parameter."
+        },
+        "unit": {
+          "typeName": "engMetaForcefieldParUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit or scale of this parameter."
+        },
+        "value": {
+          "typeName": "engMetaForcefieldParValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The value of this parameter."
+        }
+      }
+    },
+    "temporal_resolution": {
+      "properties": {
+        "points": {
+          "typeName": "engMetaTempPoints",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of time points that describe the temporal resolution (if it can not be specified otherwise)."
+        },
+        "number_of_time_steps": {
+          "typeName": "engMetaTempCountPoints",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "The number of time points (with equidistant distance)."
+        },
+        "interval": {
+          "typeName": "engMetaTempInterval",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Distance between two time points."
+        },
+        "unit": {
+          "typeName": "engMetaTempUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit of the temporal resolution."
+        }
+      }
+    },
+    "boundary_parameters": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaBoundCondParName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the parameter."
+        },
+        "symbol": {
+          "typeName": "engMetaBoundCondParSymbol",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The symbol used to describe this parameter."
+        },
+        "unit": {
+          "typeName": "engMetaBoundCondParUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit or scale of this parameter."
+        },
+        "value": {
+          "typeName": "engMetaBoundCondParValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The value of this parameter."
+        }
+      }
+    },
+    "force_field": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaForcefieldName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the force field."
+        },
+        "parameters": {
+          "typeName": "engMetaForcefieldPars",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of all parameter names relevant for this force field (detailed information about parameters should be given under Force Field Parameters entry)."
+        }
+      }
+    },
+    "boundary_conditions": {
+      "properties": {
+        "flows": {
+          "typeName": "engMetaBoundCondFlows",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of in- and outflows describing this boundary condition (detailed information about flows should be given under Flows)."
+        },
+        "parameters": {
+          "typeName": "engMetaBoundCondPars",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of all parameter names relevant for this boundary condition (detailed information about parameters should be given under Boundary Parameters."
+        }
+      }
+    },
+    "system_phases": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaPhaseName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of a phase."
+        },
+        "components": {
+          "typeName": "engMetaPhaseComps",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of all component names for this phase (detailed information about components should be given under System Components)."
+        }
+      }
+    },
+    "flows": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaFlowsName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the flow."
+        },
+        "components": {
+          "typeName": "engMetaFlowsComp",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "List of system component names this flow belongs to."
+        },
+        "shape": {
+          "typeName": "engMetaFlowsShape",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Shape of the flow."
+        },
+        "size": {
+          "typeName": "engMetaFlowsSize",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "Size of the flow."
+        },
+        "position": {
+          "typeName": "engMetaFlowsPosition",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The position of the flow."
+        }
+      }
+    },
+    "system_or_phase_components": {
+      "properties": {
+        "id": {
+          "typeName": "engMetaCompId",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "integer",
+          "description": "Unique number that can be referred to in the metadata. Use if Name is not unique."
+        },
+        "name": {
+          "typeName": "engMetaCompName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of this component."
+        },
+        "description": {
+          "typeName": "engMetaCompDescription",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Description of the component."
+        },
+        "inchicode": {
+          "typeName": "engMetaCompInChI",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The IUPAC International Chemical Identifier"
+        },
+        "smilescode": {
+          "typeName": "engMetaCompSmilesCode",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Simplified Molecular Input Line Entry Specification"
+        },
+        "iupac_name": {
+          "typeName": "engMetaCompIUPAC",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Chemical nomenclature created and developed by the International Union of Pure and Applied Chemistry (IUPAC)"
+        },
+        "quantity": {
+          "typeName": "engMetaCompQuantity",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The amount of this component."
+        },
+        "unit": {
+          "typeName": "engMetaCompUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit in which the amount is measured."
+        },
+        "force_field": {
+          "typeName": "engMetaCompForcefield",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the force field belonging to this component (detailed information about the force field should be given under Force Field Parameters)."
+        }
+      }
+    },
+    "system_parameters": {
+      "properties": {
+        "name": {
+          "typeName": "engMetaSystemParName",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name of the parameter."
+        },
+        "symbol": {
+          "typeName": "engMetaSystemParSymbol",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The symbol used to describe this parameter."
+        },
+        "unit": {
+          "typeName": "engMetaSystemParUnit",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The unit or scale of this parameter."
+        },
+        "value": {
+          "typeName": "engMetaSystemParValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "number",
+          "description": "The (numerical) value of this parameter."
+        },
+        "textual_value": {
+          "typeName": "engMetaSystemParTextValue",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "The value of this system parameter (for non numerical values)."
+        }
+      }
     }
   },
   "required": [
-    "force_field_parameters",
-    "system_or_phase_components",
+    "spatial_resolution",
     "controlled_variables",
-    "system_parameters",
+    "measured_variables",
+    "force_field_parameters",
     "temporal_resolution",
-    "boundary_conditions",
+    "boundary_parameters",
     "force_field",
+    "boundary_conditions",
     "system_phases",
     "flows",
-    "measured_variables",
-    "boundary_parameters",
-    "spatial_resolution"
+    "system_or_phase_components",
+    "system_parameters"
   ]
 }
