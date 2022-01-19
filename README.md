@@ -27,9 +27,11 @@ In order to install pyDaRUS either use the python package manager pip
 
 or build it from source 
 
-```git clone https://github.com/JR-1991/pyDaRUS.git```
-```cd pyDaRUS```
-```python3 setup.py install```
+```
+git clone https://github.com/JR-1991/pyDaRUS.git
+cd pyDaRUS
+python3 setup.py install
+```
 
 ### Executing program
 
