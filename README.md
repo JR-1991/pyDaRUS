@@ -69,8 +69,8 @@ citation.title = "Some Title"
 citation.subject = [SubjectEnum.chemistry]
 
 citation.add_description(text="Some description", date="1991")
-citation.add_author(name="Jan Range", affiliation="SimTech")
-citation.add_contact(name="Jan Range", email="jan.range@simtech.uni-stuttgart.de")
+citation.add_author(name="Max Maximum", affiliation="MaxTech")
+citation.add_contact(name="Max Maximum", email="max@maximum.de")
 ```
 
 
@@ -115,7 +115,7 @@ dataset.citation.add_author(name="Max Mustermann", affiliation="SimTech")
 # Unfortunately you have to provide your contact again
 # since DaRUS wont include mails when fetchin an entry
 
-dataset.update(contact_name="Jan Range", contact_mail="jan.range@simtech.uni-stuttgart.de")
+dataset.update(contact_name="Max Maximum", contact_mail="max@maximum.de")
 ```
 
 
