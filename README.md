@@ -98,7 +98,7 @@ p_id = dataset.upload(dataverse_name="my_dataverse", filenames=["pyDaRUS"])
     Dataset with pid 'doi:10.18419/darus-2447' created.
 
 
-## Download a dataset from Dataverse
+## Download, edit and update a dataset from Dataverse
 
 
 ```python
