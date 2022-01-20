@@ -104,6 +104,18 @@ p_id = dataset.upload(dataverse_name="my_dataverse", filenames=["pyDaRUS"])
 ```python
 # Retrieve a dataset from Dataverse by using the given DOI/PID
 dataset = Dataset.from_dataverse_doi(p_id)
+
+# Edit the dataset
+dataset.process.add_method_parameters(name="Param3", symbol="p3", unit="kg", value=100.0)
+dataset.citation.add_author(name="Max Mustermann", affiliation="SimTech")
+```
+
+```python
+# Now of update the dataset on Dataverse using .update
+# Unfortunately you have to provide your contact again
+# since DaRUS wont include mails when fetchin an entry
+
+dataset.update(contact_name="Jan Range", contact_mail="jan.range@simtech.uni-stuttgart.de")
 ```
 
 
