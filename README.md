@@ -111,7 +111,7 @@ dataset.citation.add_author(name="Max Mustermann", affiliation="SimTech")
 ```
 
 ```python
-# Now of update the dataset on Dataverse using .update
+# In order to update the dataset on Dataverse use the dataset.update method
 # Unfortunately you have to provide your contact again
 # since DaRUS wont include mails when fetchin an entry
 
