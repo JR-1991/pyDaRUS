@@ -118,6 +118,19 @@ dataset.citation.add_author(name="Max Mustermann", affiliation="SimTech")
 dataset.update(contact_name="Max Maximum", contact_mail="max@maximum.de")
 ```
 
+## Export dataset as YAML template and re-initialize
+
+In addition to script access PyDaRUS offers the possibility to initialize a dataset via a specific YAML file. Some application may require metadata that does not change in the course of creation. Thus, such a YAML file can be used as a template. In this exmaple, the file is generated using the ```yaml```-method found in the ```Dataset``` object.
+
+```python
+with open("MyDataset.yaml", "w") as file_handle:
+    file_handle.write(dataset.yaml())
+```
+Now that the YAML file has been exported, the file can be edited or extended to you desire. The ```Dataset``` object can now be re-initialized using the ```from_yaml```-classmethod, which parses the YAML content to the appropriate metadatablock objects.
+
+```python
+dataset = Dataset.from_yaml(path = "./MyDataset.yaml")
+```
 
 ## Help
 
