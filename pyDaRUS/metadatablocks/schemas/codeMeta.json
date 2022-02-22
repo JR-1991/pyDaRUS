@@ -4,6 +4,26 @@
   "title": "codeMeta",
   "type": "object",
   "properties": {
+    "software_suggestions": {
+      "typeName": "codeMetaSoftwareSuggestions",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Optional dependencies , e.g. for optional features, code development, etc.",
+      "items": {
+        "$ref": "#/definitions/software_suggestions"
+      }
+    },
+    "software_requirements": {
+      "typeName": "codeMetaSoftwareRequirements",
+      "type": "array",
+      "typeClass": "compound",
+      "multiple": true,
+      "description": "Required software dependencies",
+      "items": {
+        "$ref": "#/definitions/software_requirements"
+      }
+    },
     "software_version": {
       "typeName": "codeMetaSoftwareVersion",
       "typeClass": "primitive",
@@ -140,50 +160,12 @@
       "type": "string",
       "description": "Link to software bug reporting or issue tracking system"
     },
-    "software_requirements": {
-      "typeName": "codeMetaSoftwareRequirements",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Required software dependencies",
-      "items": {
-        "$ref": "#/definitions/software_requirements"
-      }
-    },
-    "software_suggestions": {
-      "typeName": "codeMetaSoftwareSuggestions",
-      "type": "array",
-      "typeClass": "compound",
-      "multiple": true,
-      "description": "Optional dependencies , e.g. for optional features, code development, etc.",
-      "items": {
-        "$ref": "#/definitions/software_suggestions"
-      }
-    },
     "_metadatablock_name": {
       "default": "codeMeta",
       "type": "string"
     }
   },
   "definitions": {
-    "software_requirements": {
-      "properties": {
-        "name": {
-          "typeName": "codeMetaSoftwareRequirementsTitle",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Name or title of the required software/library"
-        },
-        "url": {
-          "typeName": "codeMetaSoftwareRequirementsUrl",
-          "typeClass": "primitive",
-          "multiple": false,
-          "type": "string",
-          "description": "Link to required software/library"
-        }
-      }
-    },
     "software_suggestions": {
       "properties": {
         "name": {
@@ -201,10 +183,28 @@
           "description": "Link to optional software/library"
         }
       }
+    },
+    "software_requirements": {
+      "properties": {
+        "name": {
+          "typeName": "codeMetaSoftwareRequirementsTitle",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Name or title of the required software/library"
+        },
+        "url": {
+          "typeName": "codeMetaSoftwareRequirementsUrl",
+          "typeClass": "primitive",
+          "multiple": false,
+          "type": "string",
+          "description": "Link to required software/library"
+        }
+      }
     }
   },
   "required": [
-    "software_requirements",
-    "software_suggestions"
+    "software_suggestions",
+    "software_requirements"
   ]
 }
