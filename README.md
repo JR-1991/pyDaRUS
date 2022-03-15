@@ -8,6 +8,30 @@ Will be written soon ...
 
 ## Getting Started
 
+Get started with PyDaRUS by running the following command 
+
+```
+# Using PyPI
+python -m pip install pyDaRUS
+```
+
+Or build by source
+```
+git clone https://github.com/JR-1991/pyDaRUS.git
+cd pyDaRUS
+python3 setup.py install
+```
+
+***Important note**
+
+Currently the dependency __pyDataverse___ is not updated to work with the new Dataverse version **5.9** and will thus fail when data is uploaded. For this, use the fork provided that fixes the problem. In order to install, follow these instructions
+
+```
+git clone https://github.com/JR-1991/pyDataverse.git
+cd pyDataverse
+python3 setup.py install
+```
+
 ### Dependencies
 
 * easyDataverse
