@@ -43,20 +43,6 @@ python3 setup.py install
 * pandas
 * pyaml
 
-### Installing
-
-In order to install pyDaRUS either use the python package manager pip
-
-```python3 -m pip install pyDaRUS```
-
-or build it from source 
-
-```
-git clone https://github.com/JR-1991/pyDaRUS.git
-cd pyDaRUS
-python3 setup.py install
-```
-
 ### Executing program
 
 The following example will demonstrate how to use pyDaRUS. Essentially, the workflow can be summarize as follows:
@@ -68,14 +54,12 @@ The following example will demonstrate how to use pyDaRUS. Essentially, the work
 
 Please note, that the interface ```easyDataverse``` will infer the ```DATAVERSE_URL``` as well as ```DATAVERSE_API_TOKEN``` from your environment variables. Thus, please make sure these are available at runtim.
 
-
 ## Creating and uploading a dataset to Dataverse
 
 ```python
 from pyDaRUS import Citation, Process, Dataset
 from pyDaRUS.metadatablocks.citation import SubjectEnum, IdentifierScheme
 ```
-
 
 ```python
 # Initialize Dataset and metadatablocks
@@ -88,13 +72,15 @@ process = Process()
 
 
 ```python
-# Fill in citation relevant fields (TODO: Make sure these are required)
+# Fill in citation relevant fields
 citation.title = "Some Title"
 citation.subject = [SubjectEnum.chemistry]
 
+# Use add function to append compound objects without
+# having to import the corresponding class
 citation.add_description(text="Some description", date="1991")
-citation.add_author(name="Max Maximum", affiliation="MaxTech")
-citation.add_contact(name="Max Maximum", email="max@maximum.de")
+citation.add_author(name="Jan Range", affiliation="SimTech")
+citation.add_contact(name="Jan Range", email="jan.range@simtech.uni-stuttgart.de")
 ```
 
 
@@ -114,33 +100,45 @@ dataset.add_metadatablock(process)
 
 
 ```python
-# Finally, upload the dataset to dataverse
-# URL and API_TOKEN will be inferred from the env
-p_id = dataset.upload(dataverse_name="my_dataverse", filenames=["pyDaRUS"])
+# If given add files and directories
+dataset.add_directory("Examples/dataset_upload/")
 ```
 
-    Dataset with pid 'doi:10.18419/darus-2447' created.
 
+```python
+# Finally, upload the dataset to dataverse
+# URL and API_TOKEN will be inferred from the env
+p_id = dataset.upload(dataverse_name="playground")
+```
 
-## Download, edit and update a dataset from Dataverse
+## Download and edit a dataset from Dataverse
 
 
 ```python
 # Retrieve a dataset from Dataverse by using the given DOI/PID
-dataset = Dataset.from_dataverse_doi(p_id)
+dataset = Dataset.from_dataverse_doi(p_id, filedir="Examples/dataset_download/")
+
+# Change a file
+with open("Examples/dataset_download/test_file.txt", "w") as f:
+    f.write("Has changed")
+    
+# Add new files
+dataset.add_file(dv_path="nu_file.txt", local_path="Examples/dataset_download/nu_file.txt")
 
 # Edit the dataset
 dataset.process.add_method_parameters(name="Param3", symbol="p3", unit="kg", value=100.0)
 dataset.citation.add_author(name="Max Mustermann", affiliation="SimTech")
 ```
 
+
 ```python
-# In order to update the dataset on Dataverse use the dataset.update method
+# Now of update the dataset on Dataverse using .update
 # Unfortunately you have to provide your contact again
 # since DaRUS wont include mails when fetchin an entry
 
-dataset.update(contact_name="Max Maximum", contact_mail="max@maximum.de")
+dataset.update(contact_name="Jan Range", contact_mail="jan.range@simtech.uni-stuttgart.de")
 ```
+
 
 ## Export dataset as YAML template and re-initialize
 
