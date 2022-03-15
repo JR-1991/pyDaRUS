@@ -22,9 +22,9 @@ cd pyDaRUS
 python3 setup.py install
 ```
 
-__Important note__
-
-Currently the dependency __pyDataverse___ is not updated to work with the new Dataverse version **5.9** and will thus fail when data is uploaded. For this, use the fork provided that fixes the problem. In order to install, follow these instructions
+> __Important note__
+>
+>Currently the dependency __pyDataverse___ is not updated to work with the new Dataverse version **5.9** and will thus fail when data is uploaded. For this, use >the fork provided that fixes the problem. In order to install, follow these instructions
 
 ```
 git clone https://github.com/JR-1991/pyDataverse.git
