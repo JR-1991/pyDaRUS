@@ -1,7 +1,7 @@
 <h1 align="center">
   PyDaRUS
 </h1>
-<p align="center">PyDaRUS is the Python library used to programatically interact with the Dataverse installation DaRUS. It offers the creation and upload of datasets as well as download and editing of existing entries. In addition, it offers the export to and import from JSON/XML/YAML. </p>
+<p align="center">PyDaRUS is the Python library used to programatically interact with the Dataverse installation DaRUS. It offers the creation and upload of datasets as well as download and editing of existing entries. In addition, it offers the export to and import from JSON/XML/YAML/HDF5. </p>
 
 
 ## 🚀 Getting Started
