@@ -22,7 +22,7 @@ python3 setup.py install
 
 ### 🚨 __Important note__
 
-Currently the dependency __pyDataverse__ is not updated to work with the new Dataverse version **5.9** and will thus fail when data is uploaded. For this, use >the fork provided that fixes the problem. In order to install, follow these instructions
+Currently the dependency __pyDataverse__ is not updated to work with the new Dataverse version **5.9** and will thus fail when data is uploaded. For this, use the fork provided that fixes the problem. In order to install, follow these instructions
 
 ```
 git clone https://github.com/JR-1991/pyDataverse.git
@@ -40,10 +40,12 @@ python3 setup.py install
 * pyDataverse
 * pandas
 * pyaml
+* deepdish
+* h5py
 
 ## 🐍 Example program
 
-The following example will demonstrate how to use pyDaRUS. Essentially, the workflow can be summarize as follows:
+The following example will demonstrate how to use pyDaRUS. Essentially, the workflow can be summarized as follows:
 
 1. Initialize the ```Dataset``` container.
 2. Choose the metadatablocks to which you'd like to write and initialize these.
@@ -60,7 +62,7 @@ from pyDaRUS.metadatablocks.citation import SubjectEnum, IdentifierScheme
 ```
 
 ```python
-# Initialize Dataset and metadatablocks
+# Initialize Dataset
 dataset = Dataset()
 
 # Initialize metadatablocks you like to use
@@ -130,7 +132,7 @@ dataset.citation.add_author(name="Max Mustermann", affiliation="SimTech")
 
 
 ```python
-# Now of update the dataset on Dataverse using .update
+# Now to update the dataset on Dataverse use 'dataset.update'.
 # Unfortunately you have to provide your contact again
 # since DaRUS wont include mails when fetchin an entry
 
@@ -140,13 +142,13 @@ dataset.update(contact_name="Jan Range", contact_mail="jan.range@simtech.uni-stu
 
 ### Export dataset as YAML template and re-initialize
 
-In addition to script access PyDaRUS offers the possibility to initialize a dataset via a specific YAML file. Some application may require metadata that does not change in the course of creation. Thus, such a YAML file can be used as a template. In this exmaple, the file is generated using the ```yaml```-method found in the ```Dataset``` object.
+In addition to scripting, PyDaRUS offers the opportunity to initialize a dataset via a specific YAML file (JSON, XML and HDF5 will follow). Some application may require metadata that stays constent in the course of creation. Thus, such a YAML file can be used as a template to reduce overhead. In this exmaple, the file is generated using the ```yaml```-method found in the ```Dataset``` object.
 
 ```python
 with open("MyDataset.yaml", "w") as file_handle:
     file_handle.write(dataset.yaml())
 ```
-Now that the YAML file has been exported, the file can be edited or extended to you desire. The ```Dataset``` object can now be re-initialized using the ```from_yaml```-classmethod, which parses the YAML content to the appropriate metadatablock objects.
+Now that the YAML file has been exported, it can be edited or extended to you desire. Finally, the ```Dataset``` object can be re-initialized using the ```from_yaml```-classmethod, which parses the YAML content to the appropriate metadatablock objects. From this point, modifications can be made similar to the previous example.
 
 ```python
 dataset = Dataset.from_yaml(path = "./MyDataset.yaml")
