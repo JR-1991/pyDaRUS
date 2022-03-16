@@ -140,7 +140,7 @@ dataset.update(contact_name="Jan Range", contact_mail="jan.range@simtech.uni-stu
 ```
 
 
-### Export dataset as YAML template and re-initialize
+## Export dataset as YAML template and re-initialize
 
 In addition to scripting, PyDaRUS offers the opportunity to initialize a dataset via a specific YAML file (JSON, XML and HDF5 will follow). Some application may require metadata that stays constent in the course of creation. Thus, such a YAML file can be used as a template to reduce overhead. In this exmaple, the file is generated using the ```yaml```-method found in the ```Dataset``` object.
 
