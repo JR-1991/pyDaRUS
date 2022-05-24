@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='pyDaRUS',
-    version='1.0.4',
+    version='1.0.5',
     author='easyDataverse',
     license='MIT License',
     packages=setuptools.find_packages(),
