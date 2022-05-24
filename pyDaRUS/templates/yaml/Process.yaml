@@ -1,4 +1,15 @@
 Process:
+  processing_steps:
+    - id: null
+      type: null
+      date: null
+      methods: null
+      error_method: null
+      software: null
+      instruments: null
+      environment: null
+      input: null
+      output: null
   processing_methods:
     - name: null
       description: null
@@ -11,11 +22,12 @@ Process:
       citation: null
       url: null
       license: null
-  environments:
+  method_parameters:
     - name: null
-      compiler_names_and_flags: null
-      number_of_nodes: null
-      ppn: null
+      symbol: null
+      unit: null
+      value: null
+      textual_value: null
   instruments:
     - name: null
       description: null
@@ -24,20 +36,8 @@ Process:
       serial_number: null
       software: null
       location: null
-  processing_steps:
-    - id: null
-      type: null
-      date: null
-      methods: null
-      error_method: null
-      software: null
-      instruments: null
-      environment: null
-      input: null
-      output: null
-  method_parameters:
+  environments:
     - name: null
-      symbol: null
-      unit: null
-      value: null
-      textual_value: null
+      compiler_names_and_flags: null
+      number_of_nodes: null
+      ppn: null

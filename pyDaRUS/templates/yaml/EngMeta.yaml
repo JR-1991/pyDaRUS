@@ -1,10 +1,20 @@
 EngMeta:
   data_generation: null
-  force_field_parameters:
+  system_parameters:
     - name: null
       symbol: null
       unit: null
       value: null
+      textual_value: null
+  measured_variables:
+    - name: null
+      symbol: null
+      unit: null
+      error: null
+      error_description: null
+      minimum_value: null
+      maximum_value: null
+      textual_value: null
   system_or_phase_components:
     - id: null
       name: null
@@ -23,14 +33,20 @@ EngMeta:
       minimum_value: null
       maximum_value: null
       textual_value: null
-  boundary_conditions:
-    - flows: null
-      parameters: null
-  boundary_parameters:
+  force_field_parameters:
     - name: null
       symbol: null
       unit: null
       value: null
+  flows:
+    - name: null
+      components: null
+      shape: null
+      size: null
+      position: null
+  force_field:
+    - name: null
+      parameters: null
   spatial_resolution:
     - number_of_cells: null
       number_of_blocks: null
@@ -42,35 +58,19 @@ EngMeta:
       interval_z: null
       unit: null
       scaling_formular: null
-  force_field:
-    - name: null
-      parameters: null
-  measured_variables:
+  boundary_parameters:
     - name: null
       symbol: null
       unit: null
-      error: null
-      error_description: null
-      minimum_value: null
-      maximum_value: null
-      textual_value: null
+      value: null
+  system_phases:
+    - name: null
+      components: null
   temporal_resolution:
     - points: null
       number_of_time_steps: null
       interval: null
       unit: null
-  flows:
-    - name: null
-      components: null
-      shape: null
-      size: null
-      position: null
-  system_parameters:
-    - name: null
-      symbol: null
-      unit: null
-      value: null
-      textual_value: null
-  system_phases:
-    - name: null
-      components: null
+  boundary_conditions:
+    - flows: null
+      parameters: null
