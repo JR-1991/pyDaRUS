@@ -25,9 +25,7 @@ python3 setup.py install
 Currently the dependency __pyDataverse__ is not updated to work with the new Dataverse version **5.9** and will thus fail when data is uploaded. For this, use the fork provided that fixes the problem. In order to install, follow these instructions
 
 ```
-git clone https://github.com/JR-1991/pyDataverse.git
-cd pyDataverse
-python3 setup.py install
+pip install git+https://github.com/JR-1991/pyDataverse.git@0fcfcd3fbc6bf1aec869899f715a51dca25e91be
 ```
 
 ### ⚙️ Dependencies
