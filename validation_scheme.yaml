@@ -1,0 +1,9 @@
+lib_name: pyDaRUS
+metadatablocks:
+  citation:
+    author:
+      mandatory: True
+      function: citation.author.validate_author
+    grant_information:
+      mandatory: True
+      function: citation.grant.validate_grantInformation
